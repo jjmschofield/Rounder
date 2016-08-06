@@ -1,9 +1,8 @@
 import {provideRouter, RouterConfig} from '@angular/router';
-
-import {NightsOutComponent} from './nights-out'
+import {NightsOutOverviewComponent} from './nights-out/nights-out-overview';
 
 export const routes:RouterConfig = [
-  {path: '', component: NightsOutComponent}
+  {path: '', component: NightsOutOverviewComponent}
 ];
 
 export const APP_ROUTER_PROVIDERS = [
