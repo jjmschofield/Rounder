@@ -81,7 +81,7 @@ describe('Shared', () => {
         });
       });
 
-      describe('getCosts', () => {
+      describe('getCost', () => {
         it('should return the sum of all rounds when called', () => {
 
           //Arrange
