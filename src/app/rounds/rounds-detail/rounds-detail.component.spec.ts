@@ -4,15 +4,15 @@ import {
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import { RoundsCreateComponent } from './rounds-detail.component';
+import { RoundsDetailComponent } from './rounds-detail.component';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => {
-    addProviders([RoundsCreateComponent]);
+    addProviders([RoundsDetailComponent]);
   });
 
-  it('should have tests', inject([RoundsCreateComponent], (underTest) => {
+  it('should have tests', inject([RoundsDetailComponent], (underTest) => {
     fail();
   }));
 
