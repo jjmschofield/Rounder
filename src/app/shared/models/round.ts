@@ -1,9 +1,10 @@
 import {Product} from './product'
+import {Bar} from './bar'
 
 export class Round {
   constructor(
     public id: number, //TODO - This is sometimes SERIAL in SQL schema, is this an issue?
-    public barId: number,
+    public bar: Bar,
     public timestamp: number, //TODO - is TIMESTAMP === UNIX TIMESTAMP?
     public products: Product[] = []
   ) {  }

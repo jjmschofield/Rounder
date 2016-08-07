@@ -1,4 +1,5 @@
-import {Round} from './round'
+import {Round} from './round';
+import {Bar} from './bar';
 
 export class NightOut {
   constructor(
@@ -16,7 +17,7 @@ export class NightOut {
     return null;
   }
 
-  addRound(barId:number){
+  addRound(bar:Bar){
     //API Call
     //POST: {userId}/rounds
     //BODY: {barId:number}
@@ -27,7 +28,7 @@ export class NightOut {
 
     let round = new Round(
       id,
-      barId,
+      bar,
       timestamp
     );
 
