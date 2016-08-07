@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {NightsOutListComponent} from '../nights-out-list';
+import {NightsOutService} from '../nights-out.service';
+import {NightOut} from '../../shared/models/nightOut';
 
 @Component({
   selector: 'nights-out',
@@ -9,12 +12,24 @@ import {NightsOutListComponent} from '../nights-out-list';
 })
 export class NightsOutOverviewComponent implements OnInit {
 
-  constructor() {
-    // Do stuff
+  constructor(private nightsOutService:NightsOutService,
+              private router:Router) {
   }
 
+  nightsOut:NightOut[] = [];
+
   ngOnInit() {
-    console.log('Hello Nights Out');
+    this.nightsOut = this.nightsOutService.nightsOut;
+  }
+
+  startNightOut() {
+    let nightOut = this.nightsOutService.createNightOut();
+    let link = ['/nights-out', nightOut.id];
+    this.router.navigate(link);
+  }
+
+  showPreviousNightsOut(){
+    return this.nightsOut.length > 0;
   }
 
 }
