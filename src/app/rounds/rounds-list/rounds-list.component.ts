@@ -11,7 +11,7 @@ import { RoundModel } from '../../shared/models/round.model';
 })
 export class RoundsListComponent implements OnInit {
 
-  @Input() rounds: RoundModel[];
+  @Input() rounds : RoundModel[];
   @Output() onSelected = new EventEmitter<number>();
 
   constructor () {
@@ -22,7 +22,7 @@ export class RoundsListComponent implements OnInit {
 
   }
 
-  select (id: number) {
+  select (id : number) {
     this.onSelected.emit(id);
   }
 

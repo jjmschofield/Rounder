@@ -5,7 +5,7 @@ describe('Shared', () => {
 
     describe('BarModel', () => {
 
-      let underTest: BarModel;
+      let underTest : BarModel;
 
       beforeEach(() => {
 

@@ -2,21 +2,21 @@ import { RoundModel } from './round.model';
 import { BarModel } from './bar.model';
 
 export class NightOutModel {
-  constructor (public id: number,
-               public timestamp: number,
-               public rounds: RoundModel[] = []) {
+  constructor (public id : number,
+               public timestamp : number,
+               public rounds : RoundModel[] = []) {
   }
 
-  getRoundById (roundId: number) {
+  getRoundById (roundId : number) {
     for (let round of this.rounds) {
-      if (round.id === roundId) {
+      if (round.id == roundId) {
         return round;
       }
     }
     return null;
   }
 
-  addRound (bar: BarModel) {
+  addRound (bar : BarModel) {
     // API Call
     // POST: {userId}/rounds
     // BODY: {barId:number}
@@ -36,7 +36,7 @@ export class NightOutModel {
     return round;
   }
 
-  removeRound (index: number) {
+  removeRound (index : number) {
     // API Call
     // DELETE: {userId}/rounds/{roundId}
     // BODY: {barId:number}

@@ -13,13 +13,13 @@ import { NightsOutService } from '../../nights-out/nights-out.service';
 })
 export class NightsOutDetailComponent implements OnInit {
 
-  nightOutIdSub: any;
-  nightOutId: number;
-  rounds: RoundModel[];
+  nightOutIdSub : any;
+  nightOutId : number;
+  rounds : RoundModel[];
 
-  constructor (private nightsOutService: NightsOutService,
-               private router: Router,
-               private route: ActivatedRoute) {
+  constructor (private nightsOutService : NightsOutService,
+               private router : Router,
+               private route : ActivatedRoute) {
   }
 
   ngOnInit () {
@@ -40,10 +40,11 @@ export class NightsOutDetailComponent implements OnInit {
   }
 
   showPreviousRounds () {
-    return this.rounds.length > 0;
+    //return this.rounds.length > 0;
+    return true;
   }
 
-  viewRound (roundId: number) {
+  viewRound (roundId : number) {
     this.router.navigate(['/nights-out', this.nightOutId, '/rounds', roundId]);
   }
 }

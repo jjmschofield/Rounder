@@ -11,7 +11,7 @@ import { NightOutModel } from '../../shared/models/night-out.model';
 })
 export class NightsOutListComponent implements OnInit {
 
-  @Input() nightsOut: NightOutModel[];
+  @Input() nightsOut : NightOutModel[];
 
   constructor () {
   }

@@ -1,6 +1,6 @@
 import { BarModel } from './bar.model';
 
-export const BarMock: BarModel[] = [
+export const BarMock : BarModel[] = [
   new BarModel(0, 'Some BarModel 0'),
   new BarModel(1, 'Some BarModel 1'),
   new BarModel(2, 'Some BarModel 2'),

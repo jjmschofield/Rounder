@@ -4,7 +4,7 @@ import { NightsOutDetailComponent } from './nights-out/nights-out-detail';
 import { RoundsCreateComponent } from './rounds/rounds-create';
 import { RoundsDetailComponent } from './rounds/rounds-detail';
 
-export const routes: RouterConfig = [
+export const routes : RouterConfig = [
   {path: '', component: NightsOutOverviewComponent},
   {path: 'nights-out', component: NightsOutOverviewComponent},
   {path: 'nights-out/:nightOutId', component: NightsOutDetailComponent},

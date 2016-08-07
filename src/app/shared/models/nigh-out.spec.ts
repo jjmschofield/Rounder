@@ -7,7 +7,7 @@ describe('Shared', () => {
 
     describe('NightOutModel', () => {
 
-      let underTest: NightOutModel;
+      let underTest : NightOutModel;
 
       beforeEach(() => {
         underTest = new NightOutModel(

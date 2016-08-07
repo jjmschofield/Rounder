@@ -7,7 +7,7 @@ describe('Shared', () => {
 
     describe('RoundModel', () => {
 
-      let underTest: RoundModel;
+      let underTest : RoundModel;
 
       beforeEach(() => {
         underTest = new RoundModel(1234, BarMock[0], Date.now());

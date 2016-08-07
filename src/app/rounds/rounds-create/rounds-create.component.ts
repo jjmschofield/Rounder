@@ -14,11 +14,11 @@ import { BarsSearchComponent } from '../../bars/bars-search';
 })
 export class RoundsCreateComponent implements OnInit {
 
-  nightOutIdSub: any;
+  nightOutIdSub : any;
 
-  constructor (private nightsOutService: NightsOutService,
-               private router: Router,
-               private route: ActivatedRoute) {
+  constructor (private nightsOutService : NightsOutService,
+               private router : Router,
+               private route : ActivatedRoute) {
   }
 
   ngOnInit () {
@@ -32,8 +32,8 @@ export class RoundsCreateComponent implements OnInit {
     this.nightOutIdSub.unsubscribe();
   }
 
-  selectBar (bar: BarModel) {
-    let nightOutId: number = this.nightsOutService.currentNightOut.id;
+  selectBar (bar : BarModel) {
+    let nightOutId : number = this.nightsOutService.currentNightOut.id;
     let round = this.nightsOutService.getNightOutById(nightOutId).addRound(bar);
     let link = ['/nights-out', nightOutId, '/rounds', round.id];
     this.router.navigate(link);

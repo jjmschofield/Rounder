@@ -5,7 +5,7 @@ describe('Shared', () => {
 
     describe('ProductModel', () => {
 
-      let underTest: ProductModel;
+      let underTest : ProductModel;
 
       beforeEach(() => {
         underTest = new ProductModel(

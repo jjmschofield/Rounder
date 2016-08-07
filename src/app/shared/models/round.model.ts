@@ -2,10 +2,10 @@ import { ProductModel } from './product.model';
 import { BarModel } from './bar.model';
 
 export class RoundModel {
-  constructor (public id: number, // TODO - This is sometimes SERIAL in SQL schema, is this an issue?
-               public bar: BarModel,
-               public timestamp: number, // TODO - is TIMESTAMP === UNIX TIMESTAMP?
-               public products: ProductModel[] = []) {
+  constructor (public id : number, // TODO - This is sometimes SERIAL in SQL schema, is this an issue?
+               public bar : BarModel,
+               public timestamp : number, // TODO - is TIMESTAMP === UNIX TIMESTAMP?
+               public products : ProductModel[] = []) {
   }
 
   // save(){ // TODO - make an API call to save this model to the api
@@ -18,12 +18,12 @@ export class RoundModel {
   //
   // }
 
-  addProduct (product: ProductModel) {
+  addProduct (product : ProductModel) {
     this.products.push(product);
     return this.products;
   }
 
-  removeProduct (index: number) {
+  removeProduct (index : number) {
     this.products.splice(index, 1);
     return this.products;
   }

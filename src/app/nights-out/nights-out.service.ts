@@ -4,15 +4,15 @@ import { NightOutModel } from '../shared/models/night-out.model';
 
 @Injectable()
 export class NightsOutService {
-  nightsOut: NightOutModel[] = [];
-  currentNightOut: NightOutModel;
+  nightsOut : NightOutModel[] = [];
+  currentNightOut : NightOutModel;
 
-  constructor (private router: Router) {
+  constructor (private router : Router) {
   }
 
-  setCurrentNightOutById (id: number) { // TODO - this feels awkward here, maybe a nav service?
+  setCurrentNightOutById (id : number) { // TODO - this feels awkward here, maybe a nav service?
 
-    let nightOut: NightOutModel = this.getNightOutById(id);
+    let nightOut : NightOutModel = this.getNightOutById(id);
 
     if (nightOut) {
       this.currentNightOut = nightOut;
@@ -34,7 +34,7 @@ export class NightsOutService {
     return nightOut;
   }
 
-  getNightOutById (id: number) {
+  getNightOutById (id : number) {
 
     for (let nightOut of this.nightsOut) {
       if (nightOut.id == id) {

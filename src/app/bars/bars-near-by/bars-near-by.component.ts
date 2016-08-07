@@ -12,16 +12,16 @@ export class BarsNearByComponent implements OnInit {
 
   @Output() onSelected = new EventEmitter<BarModel>();
 
-  bars: BarModel[] = [];
+  bars : BarModel[] = [];
 
-  constructor (private barService: BarService) {
+  constructor (private barService : BarService) {
     this.bars = this.barService.getBars();
   }
 
   ngOnInit () {
   }
 
-  select (bar: BarModel) {
+  select (bar : BarModel) {
     this.onSelected.emit(bar);
   }
 

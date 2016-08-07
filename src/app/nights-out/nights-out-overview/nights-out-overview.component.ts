@@ -12,10 +12,10 @@ import { NightOutModel } from '../../shared/models/night-out.model';
 })
 export class NightsOutOverviewComponent implements OnInit {
 
-  nightsOut: NightOutModel[] = [];
+  nightsOut : NightOutModel[] = [];
 
-  constructor (private nightsOutService: NightsOutService,
-               private router: Router) {
+  constructor (private nightsOutService : NightsOutService,
+               private router : Router) {
   }
 
   ngOnInit () {
