@@ -1,11 +1,11 @@
-import {Product} from './product'
+import { Product } from './product'
 
 describe('Shared', () => {
   describe('Models', () => {
 
     describe('Product', () => {
 
-      let underTest:Product;
+      let underTest: Product;
 
       beforeEach(() => {
         underTest = new Product(
@@ -72,7 +72,6 @@ describe('Shared', () => {
 
         });
       });
-
 
 
     });

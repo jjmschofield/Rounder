@@ -1,13 +1,13 @@
-import {Round} from './round';
-import {Product} from './product';
-import {BarMock} from './bar.mock';
+import { Round } from './round';
+import { Product } from './product';
+import { BarMock } from './bar.mock';
 
 describe('Shared', () => {
   describe('Models', () => {
 
     describe('Round', () => {
 
-      let underTest:Round;
+      let underTest: Round;
 
       beforeEach(() => {
         underTest = new Round(1234, BarMock[0], Date.now());

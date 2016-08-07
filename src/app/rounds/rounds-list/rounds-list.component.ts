@@ -1,7 +1,7 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import {ROUTER_DIRECTIVES} from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import {Round} from '../../shared/models/round';
+import { Round } from '../../shared/models/round';
 
 @Component({
   selector: 'rounds-list',
@@ -11,18 +11,18 @@ import {Round} from '../../shared/models/round';
 })
 export class RoundsListComponent implements OnInit {
 
-  @Input() rounds : Round[];
+  @Input() rounds: Round[];
   @Output() onSelected = new EventEmitter<number>();
 
-  constructor() {
+  constructor () {
     // Do stuff
   }
 
-  ngOnInit() {
+  ngOnInit () {
 
   }
 
-  select(id:number){
+  select (id: number) {
     this.onSelected.emit(id);
   }
 

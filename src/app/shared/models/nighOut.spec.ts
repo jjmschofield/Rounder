@@ -1,13 +1,13 @@
-import {NightOut} from './nightOut'
-import {Product} from './product';
-import {BarMock} from './bar.mock';
+import { NightOut } from './nightOut'
+import { Product } from './product';
+import { BarMock } from './bar.mock';
 
 describe('Shared', () => {
   describe('Models', () => {
 
     describe('NightOut', () => {
 
-      let underTest:NightOut;
+      let underTest: NightOut;
 
       beforeEach(() => {
         underTest = new NightOut(

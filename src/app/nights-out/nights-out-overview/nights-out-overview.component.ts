@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {NightsOutListComponent} from '../nights-out-list';
-import {NightsOutService} from '../nights-out.service';
-import {NightOut} from '../../shared/models/nightOut';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NightsOutListComponent } from '../nights-out-list';
+import { NightsOutService } from '../nights-out.service';
+import { NightOut } from '../../shared/models/nightOut';
 
 @Component({
   selector: 'nights-out',
@@ -12,23 +12,23 @@ import {NightOut} from '../../shared/models/nightOut';
 })
 export class NightsOutOverviewComponent implements OnInit {
 
-  constructor(private nightsOutService:NightsOutService,
-              private router:Router) {
+  nightsOut: NightOut[] = [];
+
+  constructor (private nightsOutService: NightsOutService,
+               private router: Router) {
   }
 
-  nightsOut:NightOut[] = [];
-
-  ngOnInit() {
+  ngOnInit () {
     this.nightsOut = this.nightsOutService.nightsOut;
   }
 
-  startNightOut() {
+  startNightOut () {
     let nightOut = this.nightsOutService.createNightOut();
     let link = ['/nights-out', nightOut.id];
     this.router.navigate(link);
   }
 
-  showPreviousNightsOut(){
+  showPreviousNightsOut () {
     return this.nightsOut.length > 0;
   }
 

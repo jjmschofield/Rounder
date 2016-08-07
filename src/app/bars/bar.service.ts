@@ -1,18 +1,18 @@
-import {Injectable} from '@angular/core';
-import {Bar} from '../shared/models/bar';
-import {BarMock} from '../shared/models/bar.mock'
+import { Injectable } from '@angular/core';
+import { Bar } from '../shared/models/bar';
+import { BarMock } from '../shared/models/bar.mock';
 
 @Injectable()
 export class BarService {
-  bars:Bar[] = BarMock;
+  bars: Bar[] = BarMock;
 
-  getBars() {
+  getBars () {
     return this.bars;
   }
 
-  getBarById(id:number) {
+  getBarById (id: number) {
     for (let bar of this.bars) {
-      if (bar.id == id) {
+      if (bar.id === id) {
         return bar;
       }
     }

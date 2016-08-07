@@ -5,7 +5,7 @@ import {HTTP_PROVIDERS} from '@angular/http';
 import {AppComponent} from './app/app.component';
 import {APP_ROUTER_PROVIDERS} from './app/app.routes';
 
-import {NightsOutService} from './app/nights-out/nights-out.service'
+import {NightsOutService} from './app/nights-out/nights-out.service';
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === 'build') {

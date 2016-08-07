@@ -1,6 +1,6 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
-import {Bar} from '../../shared/models/bar';
-import {BarService} from '../bar.service';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Bar } from '../../shared/models/bar';
+import { BarService } from '../bar.service';
 
 @Component({
   selector: 'bars-near-by',
@@ -12,15 +12,16 @@ export class BarsNearByComponent implements OnInit {
 
   @Output() onSelected = new EventEmitter<Bar>();
 
-  bars : Bar[] = [];
+  bars: Bar[] = [];
 
-  constructor(private barService:BarService) {
+  constructor (private barService: BarService) {
     this.bars = this.barService.getBars();
   }
 
-  ngOnInit() {}
+  ngOnInit () {
+  }
 
-  select(bar:Bar){
+  select (bar: Bar) {
     this.onSelected.emit(bar);
   }
 

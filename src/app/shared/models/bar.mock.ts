@@ -1,6 +1,6 @@
-import {Bar} from './bar';
+import { Bar } from './bar';
 
-export const BarMock:Bar[] = [
+export const BarMock: Bar[] = [
   new Bar(0, 'Some Bar 0'),
   new Bar(1, 'Some Bar 1'),
   new Bar(2, 'Some Bar 2'),

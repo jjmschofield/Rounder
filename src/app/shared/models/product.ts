@@ -1,27 +1,26 @@
 export class Product {
-  constructor(
-    public id: number, //TODO - This is sometimes SERIAL in SQL schema
-    public name: string,
-    public price: number,
-    public qty: number = 1,
-    public imgUrl?: string
-  ) {  }
+  constructor (public id: number, // TODO - This is sometimes SERIAL in SQL schema
+               public name: string,
+               public price: number,
+               public qty: number = 1,
+               public imgUrl?: string) {
+  }
 
-  increaseQty(){
+  increaseQty () {
     this.qty++;
     return this;
   }
 
-  decreaseQty(){
+  decreaseQty () {
     this.qty--;
     return this;
   }
 
-  setQty(qty:number){
+  setQty (qty: number) {
     this.qty = qty;
   }
 
-  getCost(){
+  getCost () {
     return this.qty * this.price;
   }
 }
