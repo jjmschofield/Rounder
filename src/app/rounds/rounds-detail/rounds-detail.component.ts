@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+
+import {NightsOutService} from '../../nights-out/nights-out.service';
+import {Round} from '../../shared/models/round';
 
 @Component({
   selector: 'rounds-detail',
@@ -7,12 +11,20 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RoundsDetailComponent implements OnInit {
 
-  constructor() {
-    // Do stuff
+  nightOutIdSub: any;
+  rounds :Round[];
+
+  constructor(private nightsOutService:NightsOutService,
+              private router:Router,
+              private route:ActivatedRoute) {
   }
 
   ngOnInit() {
-    console.log('Hello Bars Near By');
+    this.nightOutIdSub = this.route.params.subscribe(params => {
+      let id = params['nightOutId'];
+      this.nightsOutService.setCurrentNightOutById(id);
+      this.rounds = this.nightsOutService.currentNightOut.rounds;
+    });
   }
 
 }
