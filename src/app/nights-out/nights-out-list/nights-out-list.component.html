@@ -1,13 +1,13 @@
 <table class="nights-out-table table">
-  <tr>
+  <tr *ngFor="let nightOut of nightsOut; let i = index">
     <td class="night-out-date">
-      5th August, 2016
+      {{nightOut.timestamp}}
     </td>
     <td class="night-out-cost">
-      £300
+      £{{nightOut.getCost()}}
     </td>
     <td class="night-out-view">
-      <a routerLink="/nights-out/3">View</a>
+      <a routerLink="/nights-out/{{nightOut.id}}">View</a>
     </td>
   </tr>
 </table>
