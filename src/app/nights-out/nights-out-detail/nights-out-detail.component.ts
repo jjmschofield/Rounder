@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { Round } from '../../shared/models/round';
+import { RoundModel } from '../../shared/models/round.model';
 import { RoundsListComponent } from '../../rounds/rounds-list';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 
@@ -15,7 +15,7 @@ export class NightsOutDetailComponent implements OnInit {
 
   nightOutIdSub: any;
   nightOutId: number;
-  rounds: Round[];
+  rounds: RoundModel[];
 
   constructor (private nightsOutService: NightsOutService,
                private router: Router,
@@ -44,7 +44,6 @@ export class NightsOutDetailComponent implements OnInit {
   }
 
   viewRound (roundId: number) {
-    console.log('fuck you');
     this.router.navigate(['/nights-out', this.nightOutId, '/rounds', roundId]);
   }
 }

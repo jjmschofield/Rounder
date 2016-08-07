@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Bar } from '../shared/models/bar';
+import { BarModel } from '../shared/models/bar.model';
 import { BarMock } from '../shared/models/bar.mock';
 
 @Injectable()
 export class BarService {
-  bars: Bar[] = BarMock;
+  bars: BarModel[] = BarMock;
 
   getBars () {
     return this.bars;

@@ -1,24 +1,24 @@
-import { Product } from './product';
-import { Bar } from './bar';
+import { ProductModel } from './product.model';
+import { BarModel } from './bar.model';
 
-export class Round {
+export class RoundModel {
   constructor (public id: number, // TODO - This is sometimes SERIAL in SQL schema, is this an issue?
-               public bar: Bar,
+               public bar: BarModel,
                public timestamp: number, // TODO - is TIMESTAMP === UNIX TIMESTAMP?
-               public products: Product[] = []) {
+               public products: ProductModel[] = []) {
   }
 
   // save(){ // TODO - make an API call to save this model to the api
   //
   //   //API Call
   //   //POST: {userId}/rounds/{roundId}
-  //   //BODY: {round:Round}
-  //   //Returns: {round:Round}
+  //   //BODY: {round:RoundModel}
+  //   //Returns: {round:RoundModel}
   //
   //
   // }
 
-  addProduct (product: Product) {
+  addProduct (product: ProductModel) {
     this.products.push(product);
     return this.products;
   }

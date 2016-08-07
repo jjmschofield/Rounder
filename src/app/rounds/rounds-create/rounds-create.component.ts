@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Bar } from '../../shared/models/bar';
+import { BarModel } from '../../shared/models/bar.model';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 import { BarsNearByComponent } from '../../bars/bars-near-by';
 import { BarsSearchComponent } from '../../bars/bars-search';
@@ -32,7 +32,7 @@ export class RoundsCreateComponent implements OnInit {
     this.nightOutIdSub.unsubscribe();
   }
 
-  selectBar (bar: Bar) {
+  selectBar (bar: BarModel) {
     let nightOutId: number = this.nightsOutService.currentNightOut.id;
     let round = this.nightsOutService.getNightOutById(nightOutId).addRound(bar);
     let link = ['/nights-out', nightOutId, '/rounds', round.id];

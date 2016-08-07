@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Bar } from '../../shared/models/bar';
+import { BarModel } from '../../shared/models/bar.model';
 import { BarService } from '../bar.service';
 
 @Component({
@@ -10,9 +10,9 @@ import { BarService } from '../bar.service';
 })
 export class BarsNearByComponent implements OnInit {
 
-  @Output() onSelected = new EventEmitter<Bar>();
+  @Output() onSelected = new EventEmitter<BarModel>();
 
-  bars: Bar[] = [];
+  bars: BarModel[] = [];
 
   constructor (private barService: BarService) {
     this.bars = this.barService.getBars();
@@ -21,7 +21,7 @@ export class BarsNearByComponent implements OnInit {
   ngOnInit () {
   }
 
-  select (bar: Bar) {
+  select (bar: BarModel) {
     this.onSelected.emit(bar);
   }
 

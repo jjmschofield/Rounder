@@ -1,16 +1,16 @@
-import { NightOut } from './nightOut'
-import { Product } from './product';
+import { NightOutModel } from './night-out.model'
+import { ProductModel } from './product.model';
 import { BarMock } from './bar.mock';
 
 describe('Shared', () => {
   describe('Models', () => {
 
-    describe('NightOut', () => {
+    describe('NightOutModel', () => {
 
-      let underTest: NightOut;
+      let underTest: NightOutModel;
 
       beforeEach(() => {
-        underTest = new NightOut(
+        underTest = new NightOutModel(
           1234,
           5678
         );
@@ -83,11 +83,11 @@ describe('Shared', () => {
 
           //Arrange
           let roundA = underTest.addRound(BarMock[0]);
-          roundA.addProduct(new Product(1234, 'some product', 2.50, 2));
-          roundA.addProduct(new Product(123423, 'some other product', 2.00, 5));
+          roundA.addProduct(new ProductModel(1234, 'some product', 2.50, 2));
+          roundA.addProduct(new ProductModel(123423, 'some other product', 2.00, 5));
 
           let roundB = underTest.addRound(BarMock[1]);
-          roundB.addProduct(new Product(123465464, 'some other other product', 10.00, 1));
+          roundB.addProduct(new ProductModel(123465464, 'some other other product', 10.00, 1));
 
           //Act
           let response = underTest.getCost();

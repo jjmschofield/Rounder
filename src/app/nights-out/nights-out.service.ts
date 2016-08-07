@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { NightOut } from '../shared/models/nightOut';
+import { NightOutModel } from '../shared/models/night-out.model';
 
 @Injectable()
 export class NightsOutService {
-  nightsOut: NightOut[] = [];
-  currentNightOut: NightOut;
+  nightsOut: NightOutModel[] = [];
+  currentNightOut: NightOutModel;
 
   constructor (private router: Router) {
   }
 
   setCurrentNightOutById (id: number) { // TODO - this feels awkward here, maybe a nav service?
 
-    let nightOut: NightOut = this.getNightOutById(id);
+    let nightOut: NightOutModel = this.getNightOutById(id);
 
     if (nightOut) {
       this.currentNightOut = nightOut;
@@ -24,7 +24,7 @@ export class NightsOutService {
   }
 
   createNightOut () {
-    let nightOut = new NightOut(
+    let nightOut = new NightOutModel(
       this.nightsOut.length,
       Date.now()
     );
@@ -37,7 +37,7 @@ export class NightsOutService {
   getNightOutById (id: number) {
 
     for (let nightOut of this.nightsOut) {
-      if (nightOut.id === id) {
+      if (nightOut.id == id) {
         return nightOut;
       }
     }

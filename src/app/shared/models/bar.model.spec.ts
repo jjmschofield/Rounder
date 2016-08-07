@@ -1,11 +1,11 @@
-import { Bar } from './bar'
+import { BarModel } from './bar.model'
 
 describe('Shared', () => {
   describe('Models', () => {
 
-    describe('Bar', () => {
+    describe('BarModel', () => {
 
-      let underTest: Bar;
+      let underTest: BarModel;
 
       beforeEach(() => {
 

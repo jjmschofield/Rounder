@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { Round } from '../../shared/models/round';
+import { RoundModel } from '../../shared/models/round.model';
 
 @Component({
   selector: 'rounds-list',
@@ -11,7 +11,7 @@ import { Round } from '../../shared/models/round';
 })
 export class RoundsListComponent implements OnInit {
 
-  @Input() rounds: Round[];
+  @Input() rounds: RoundModel[];
   @Output() onSelected = new EventEmitter<number>();
 
   constructor () {

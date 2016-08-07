@@ -1,10 +1,10 @@
-import { Round } from './round';
-import { Bar } from './bar';
+import { RoundModel } from './round.model';
+import { BarModel } from './bar.model';
 
-export class NightOut {
+export class NightOutModel {
   constructor (public id: number,
                public timestamp: number,
-               public rounds: Round[] = []) {
+               public rounds: RoundModel[] = []) {
   }
 
   getRoundById (roundId: number) {
@@ -16,7 +16,7 @@ export class NightOut {
     return null;
   }
 
-  addRound (bar: Bar) {
+  addRound (bar: BarModel) {
     // API Call
     // POST: {userId}/rounds
     // BODY: {barId:number}
@@ -25,7 +25,7 @@ export class NightOut {
     let id = this.rounds.length;
     let timestamp = Date.now();
 
-    let round = new Round(
+    let round = new RoundModel(
       id,
       bar,
       timestamp

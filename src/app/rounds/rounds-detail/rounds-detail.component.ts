@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { NightsOutService } from '../../nights-out/nights-out.service';
-import { Round } from '../../shared/models/round';
+import { RoundModel } from '../../shared/models/round.model';
 
 @Component({
   selector: 'rounds-detail',
@@ -12,7 +12,7 @@ import { Round } from '../../shared/models/round';
 export class RoundsDetailComponent implements OnInit {
 
   nightOutIdSub: any;
-  rounds: Round[];
+  rounds: RoundModel[];
 
   constructor (private nightsOutService: NightsOutService,
                private router: Router,

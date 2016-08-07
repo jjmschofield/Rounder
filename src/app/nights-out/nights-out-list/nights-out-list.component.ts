@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { NightOut } from '../../shared/models/nightOut';
+import { NightOutModel } from '../../shared/models/night-out.model';
 
 @Component({
   selector: 'nights-out-list',
@@ -11,7 +11,7 @@ import { NightOut } from '../../shared/models/nightOut';
 })
 export class NightsOutListComponent implements OnInit {
 
-  @Input() nightsOut: NightOut[];
+  @Input() nightsOut: NightOutModel[];
 
   constructor () {
   }

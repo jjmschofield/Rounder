@@ -1,4 +1,4 @@
-export class Bar {
+export class BarModel {
   constructor (public id: number,
                public name: string,
                public lat?: number,

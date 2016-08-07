@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NightsOutListComponent } from '../nights-out-list';
 import { NightsOutService } from '../nights-out.service';
-import { NightOut } from '../../shared/models/nightOut';
+import { NightOutModel } from '../../shared/models/night-out.model';
 
 @Component({
   selector: 'nights-out',
@@ -12,7 +12,7 @@ import { NightOut } from '../../shared/models/nightOut';
 })
 export class NightsOutOverviewComponent implements OnInit {
 
-  nightsOut: NightOut[] = [];
+  nightsOut: NightOutModel[] = [];
 
   constructor (private nightsOutService: NightsOutService,
                private router: Router) {

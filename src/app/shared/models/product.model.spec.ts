@@ -1,16 +1,16 @@
-import { Product } from './product'
+import { ProductModel } from './product.model'
 
 describe('Shared', () => {
   describe('Models', () => {
 
-    describe('Product', () => {
+    describe('ProductModel', () => {
 
-      let underTest: Product;
+      let underTest: ProductModel;
 
       beforeEach(() => {
-        underTest = new Product(
+        underTest = new ProductModel(
           1234,
-          'Some Product',
+          'Some ProductModel',
           4.75,
           1,
           'https://some-url.com/some-image.png'
