@@ -1,18 +1,21 @@
-<div class="row">
-  <div class="col-xs-12 text-center">
-    <h5>Ready to get this party going?</h5>
-    <button (click)="startNightOut()" class="btn btn-primary">
+<div class="jumbotron text-sm-center start-night-out-hero">
+  <h1 class="display-3">Ready to get this party started?</h1>
+  <p class="lead">Rounder will do the counting, just relax and have a good time.</p>
+  <div class="text-xs-center">
+    <button (click)="startNightOut()" class="btn btn-primary btn-lg btn-start-night-out">
       Start a Night Out
     </button>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <h5>Previous Nights Out</h5>
-    <nights-out-list *ngIf="showPreviousNightsOut()" [nightsOut]="nightsOut"
-    ></nights-out-list>
-    <p *ngIf="!showPreviousNightsOut()">
-      Nothing to show here yet. <a href="javascript:void(0)" (click)="startNightOut()">Start a night out?</a>
-    </p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Previous Nights Out</h5>
+      <nights-out-list *ngIf="showPreviousNightsOut()" [nightsOut]="nightsOut"
+      ></nights-out-list>
+      <p *ngIf="!showPreviousNightsOut()">
+        Nothing to show here yet. <a href="javascript:void(0)" (click)="startNightOut()">Start a night out?</a>
+      </p>
+    </div>
   </div>
 </div>
