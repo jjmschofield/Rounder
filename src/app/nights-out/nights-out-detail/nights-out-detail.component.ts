@@ -15,7 +15,7 @@ export class NightsOutDetailComponent implements OnInit {
 
   nightOutIdSub : any;
   nightOutId : number;
-  rounds : RoundModel[];
+  rounds : RoundModel[] = [];
 
   constructor (private nightsOutService : NightsOutService,
                private router : Router,
@@ -40,8 +40,7 @@ export class NightsOutDetailComponent implements OnInit {
   }
 
   showPreviousRounds () {
-    //return this.rounds.length > 0;
-    return true;
+    return this.rounds.length > 0;
   }
 
   viewRound (roundId : number) {
