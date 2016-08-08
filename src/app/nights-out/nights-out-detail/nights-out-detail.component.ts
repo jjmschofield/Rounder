@@ -1,6 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, ROUTER_DIRECTIVES} from '@angular/router';
-import {RoundsListComponent} from '../../rounds/rounds-list';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
+
+import { RoundModel } from '../../shared/models/round.model';
+import { RoundsListComponent } from '../../rounds/rounds-list';
+import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
   selector: 'nights-out-detail',
@@ -10,14 +13,38 @@ import {RoundsListComponent} from '../../rounds/rounds-list';
 })
 export class NightsOutDetailComponent implements OnInit {
 
-  id:string;
+  nightOutIdSub : any;
+  nightOutId : number;
+  rounds : RoundModel[];
 
-  constructor(private route:ActivatedRoute) {}
-
-  ngOnInit() {
-    this.route.params
-      .map(params => params['nightOutId'])
-      .subscribe((id) => this.id = id);
+  constructor (private nightsOutService : NightsOutService,
+               private router : Router,
+               private route : ActivatedRoute) {
   }
 
+  ngOnInit () {
+    this.nightOutIdSub = this.route.params.subscribe(params => {
+      let id = params['nightOutId'];
+
+      let nightOut = this.nightsOutService.setCurrentNightOutById(id);
+
+      if (nightOut) {
+        this.nightOutId = this.nightsOutService.currentNightOut.id;
+        this.rounds = this.nightsOutService.currentNightOut.rounds;
+      }
+    });
+  }
+
+  ngOnDestroy () {
+    this.nightOutIdSub.unsubscribe();
+  }
+
+  showPreviousRounds () {
+    //return this.rounds.length > 0;
+    return true;
+  }
+
+  viewRound (roundId : number) {
+    this.router.navigate(['/nights-out', this.nightOutId, '/rounds', roundId]);
+  }
 }

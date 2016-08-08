@@ -23,15 +23,10 @@ describe('App', () => {
       {
         provide: Http,
         deps: [MockBackend, BaseRequestOptions],
-        useFactory: function useFactory(backend, defaultOptions) {
+        useFactory: function useFactory (backend, defaultOptions) {
           return new Http(backend, defaultOptions);
         }
       }
     ]);
   });
-
-  it('should have an url', inject([AppComponent], (app: AppComponent) => {
-    expect(app.url).toEqual('https://github.com/preboot/angular2-webpack');
-  }));
-
 });

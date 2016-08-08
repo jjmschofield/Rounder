@@ -1,0 +1,10 @@
+<table class="products-table table">
+  <tr *ngFor="let product of products" (click)="select(product)">
+    <td class="product-date">
+      {{product.name}}
+    </td>
+    <td class="product-date">
+      {{product.price}}
+    </td>
+  </tr>
+</table>

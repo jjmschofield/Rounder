@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import {NGB_DIRECTIVES, NGB_PRECOMPILE} from '@ng-bootstrap/ng-bootstrap';
+import { NGB_DIRECTIVES, NGB_PRECOMPILE } from '@ng-bootstrap/ng-bootstrap';
 import { ApiService } from './shared';
 
 import '../style/app.scss';
@@ -13,13 +13,12 @@ import '../style/app.scss';
   selector: 'my-app', // <my-app></my-app>
   providers: [ApiService],
   directives: [...ROUTER_DIRECTIVES, NGB_DIRECTIVES],
-  precompile: [ NGB_PRECOMPILE ],
+  precompile: [NGB_PRECOMPILE],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  url = 'https://github.com/preboot/angular2-webpack';
 
-  constructor(private api: ApiService) {
+  constructor () {
   }
 }

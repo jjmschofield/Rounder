@@ -1,9 +1,11 @@
-import { enableProdMode } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
+import {enableProdMode} from '@angular/core';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {HTTP_PROVIDERS} from '@angular/http';
 
-import { AppComponent } from './app/app.component';
-import { APP_ROUTER_PROVIDERS } from './app/app.routes';
+import {AppComponent} from './app/app.component';
+import {APP_ROUTER_PROVIDERS} from './app/app.routes';
+
+import {NightsOutService} from './app/nights-out/nights-out.service';
 
 // depending on the env mode, enable prod mode or add debugging modules
 if (process.env.ENV === 'build') {
@@ -11,8 +13,9 @@ if (process.env.ENV === 'build') {
 }
 
 bootstrap(AppComponent, [
-    // These are dependencies of our App
-    HTTP_PROVIDERS,
-    APP_ROUTER_PROVIDERS
-  ])
+  // These are dependencies of our App
+  HTTP_PROVIDERS,
+  APP_ROUTER_PROVIDERS,
+  NightsOutService
+])
   .catch(err => console.error(err));

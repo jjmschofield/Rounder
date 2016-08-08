@@ -1,10 +1,10 @@
 <table class="bars-near-by-table table">
-  <tr>
+  <tr *ngFor="let bar of bars;" (click)="select(bar)">
     <td class="bar-img">
       <div class="bar-img-placeholder"></div>
     </td>
     <td class="bar-name">
-      Some Bar Name
+      {{bar.name}}
     </td>
   </tr>
 </table>

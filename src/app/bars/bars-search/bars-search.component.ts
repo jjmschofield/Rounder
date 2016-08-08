@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'bars-search',
@@ -7,11 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BarsSearchComponent implements OnInit {
 
-  constructor() {
+  constructor () {
     // Do stuff
   }
 
-  ngOnInit() {
+  ngOnInit () {
     console.log('Hello Nights Out');
   }
 
