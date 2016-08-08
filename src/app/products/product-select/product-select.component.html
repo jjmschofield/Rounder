@@ -1,10 +1,21 @@
-<table class="products-table table">
-  <tr *ngFor="let product of products" (click)="select(product)">
-    <td class="product-date">
-      {{product.name}}
-    </td>
-    <td class="product-date">
-      £{{product.price | number:'1.2-2'}}
-    </td>
-  </tr>
-</table>
+
+<div id="myModal" class="modal fade" role="dialog" [ngClass]="{'in': openModalHack, 'out': openModalHack, 'modal-open': openModalHack}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div class="card card-block text-xs-center"
+             *ngFor="let product of products"
+             (click)="select(product)">
+          <h4 class="card-title">{{product.name}}</h4>
+          <p class="card-text display-4">£{{product.price | number:'1.2-2'}}</p>
+        </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

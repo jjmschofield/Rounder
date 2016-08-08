@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 
+
+
 import { ProductModel } from '../../shared/models/product.model'
 import { ProductService } from '../product.service'
 
@@ -17,6 +19,7 @@ export class ProductSelectComponent implements OnInit {
   @Output() onSelected = new EventEmitter<ProductModel>();
 
   products : ProductModel[] = [];
+  openModalHack : boolean = false;
 
   constructor (private productService : ProductService) {
   }
@@ -25,7 +28,22 @@ export class ProductSelectComponent implements OnInit {
     this.products = this.productService.getProductsByBarId(this.barId);
   }
 
+  public openList() {
+    if(!this.openModalHack) {
+      //TODO - this is being done as ng-bootstrap at time of writing has not implement modals
+      this.addModalOpenToBody(); //We have to manipulate the dom directly to create the correct scrolling behavior
+      this.openModalHack = true;
+    }
+  }
+
+  closeList(){
+    this.removeModalOpenFromBody();
+    this.openModalHack = false;
+  }
+
   select (selectedProduct : ProductModel) {
+
+    this.closeList();
 
     let productCopy = new ProductModel(
       selectedProduct.id,
@@ -37,5 +55,21 @@ export class ProductSelectComponent implements OnInit {
 
     this.onSelected.emit(productCopy);
   }
+
+  private addModalOpenToBody(){
+    if(document.body.className.indexOf('modal-open') < 1){
+      if(document.body.className.length > 0){
+        document.body.className+= ' ' + 'modal-open';
+      }
+      else{
+        document.body.className+= 'modal-open';
+      }
+    }
+  }
+
+  private removeModalOpenFromBody(){
+    document.body.className = document.body.className.replace(/\s?modal-open/g,'');
+  }
+
 
 }
