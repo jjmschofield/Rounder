@@ -1,7 +1,7 @@
 <table class="nights-out-table table">
   <tr *ngFor="let nightOut of nightsOut; let i = index">
     <td class="night-out-date">
-      {{nightOut.timestamp}}
+      {{nightOut.timestamp | date:"EEEE dd, MMMM y"}}
     </td>
     <td class="night-out-cost">
       £{{nightOut.getCost()}}
