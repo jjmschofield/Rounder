@@ -1,16 +1,23 @@
-<div class="row">
-  <div class="col-xs-12 text-center">
-    <h5>Time to step up?</h5>
-    <button class="btn btn-primary" routerLink="/nights-out/{{nightOutId}}/rounds/create">Start a Round</button>
+<div class="jumbotron text-sm-center">
+  <h1 class="display-3">Is it your turn at the Bar?</h1>
+  <p class="lead">Don't worry, just start a round and add your drinks. We aren't paying though.</p>
+  <div class="text-xs-center">
+    <button class="btn btn-primary btn-lg btn-lg-fix"
+            routerLink="/nights-out/{{nightOutId}}/rounds/create">
+      Start a Round
+    </button>
   </div>
 </div>
-<div class="row">
-  <div class="col-xs-12">
-    <h5>Previous Rounds</h5>
-    <rounds-list *ngIf="showPreviousRounds()" [rounds]="rounds" (onSelected)="viewRound($event)"></rounds-list>
-    <p *ngIf="!showPreviousRounds()">
-      Nothing to show here yet. <a routerLink="/nights-out/{{nightOutId}}/rounds/create">Get a round in?</a>
-    </p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h5>Previous Rounds</h5>
+      <rounds-list *ngIf="showPreviousRounds()" [rounds]="rounds" (onSelected)="viewRound($event)"></rounds-list>
+      <p *ngIf="!showPreviousRounds()">
+        Nothing to show here yet. <a routerLink="/nights-out/{{nightOutId}}/rounds/create">Get a round in?</a>
+      </p>
+    </div>
   </div>
 </div>
 
