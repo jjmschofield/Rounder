@@ -1,16 +1,31 @@
-<h4>Round Total: £{{round.getCost() | number:'1.2-2'}}</h4>
-<table class="product-table table">
-  <tr *ngFor="let product of round.products;">
-    <td class="product-img">
-      <div class="product-img-placeholder"></div>
-    </td>
-    <td class="product-title">{{product.name}}</td>
-    <td class="product-price">£{{product.price | number:'1.2-2'}}</td>
-    <td class="product-qty">{{product.qty}}</td>
-    <td class="product-more"><a href="javascript:void(0)" (click)="product.increaseQty()">More</a></td>
-    <td class="product-Less"><a href="javascript:void(0)" (click)="decreaseQty(product)">Less</a></td>
-  </tr>
-</table>
+<div class="jumbotron text-xs-center">
+  <h1 class="display-4">£{{round.getCost() | number:'1.2-2'}}</h1>
+  <p class="lead">Round Total</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-block" *ngFor="let product of round.products;">
+        <h4 class="card-title">
+          {{product.name}}
+          <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
+
+        <p class="card-text display-4 text-xs-center">
+          x{{product.qty}}
+          <span class="sub-header">&nbsp;(£{{product.price * product.qty | number:'1.2-2'}})</span>
+        </p>
+
+        <div class="qty-controls text-xs-right">
+          <a class="card-link decrease" href="javascript:void(0)" (click)="decreaseQty(product)">-</a>
+          <a class="card-link increase" href="javascript:void(0)" (click)="product.increaseQty()">+</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <h4>Select A Product</h4>
 
