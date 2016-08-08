@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 
@@ -19,6 +19,9 @@ export class RoundsDetailComponent implements OnInit {
   nightOutIdSub : any;
   round : RoundModel;
 
+  @ViewChild(ProductSelectComponent)
+  private productSelectComponent: ProductSelectComponent;
+
   constructor (private nightsOutService : NightsOutService,
                private router : Router,
                private route : ActivatedRoute) {
@@ -30,6 +33,10 @@ export class RoundsDetailComponent implements OnInit {
       let roundId = params['roundId'];
       this.round = this.nightsOutService.getNightOutById(nightOutId).getRoundById(roundId);
     });
+  }
+
+  openProductList(){
+    this.productSelectComponent.openList();
   }
 
   addProduct (product : ProductModel) {

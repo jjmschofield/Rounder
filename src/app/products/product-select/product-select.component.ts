@@ -19,7 +19,7 @@ export class ProductSelectComponent implements OnInit {
   @Output() onSelected = new EventEmitter<ProductModel>();
 
   products : ProductModel[] = [];
-  openModalHack : boolean = false;
+  modalOpen : boolean = false;
 
   constructor (private productService : ProductService) {
   }
@@ -29,16 +29,16 @@ export class ProductSelectComponent implements OnInit {
   }
 
   public openList() {
-    if(!this.openModalHack) {
+    if(!this.modalOpen) {
       //TODO - this is being done as ng-bootstrap at time of writing has not implement modals
       this.addModalOpenToBody(); //We have to manipulate the dom directly to create the correct scrolling behavior
-      this.openModalHack = true;
+      this.modalOpen = true;
     }
   }
 
   closeList(){
     this.removeModalOpenFromBody();
-    this.openModalHack = false;
+    this.modalOpen = false;
   }
 
   select (selectedProduct : ProductModel) {
