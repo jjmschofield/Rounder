@@ -4,7 +4,7 @@
       {{nightOut.timestamp | date:"EEEE dd, MMMM y"}}
     </td>
     <td class="night-out-cost">
-      £{{nightOut.getCost()}}
+      £{{nightOut.getCost() | number:'1.2-2'}}
     </td>
     <td class="night-out-view">
       <a routerLink="/nights-out/{{nightOut.id}}">View</a>

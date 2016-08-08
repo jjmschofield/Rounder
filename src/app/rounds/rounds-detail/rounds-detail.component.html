@@ -1,11 +1,11 @@
-<h4>Round Total: £{{round.getCost()}}</h4>
+<h4>Round Total: £{{round.getCost() | number:'1.2-2'}}</h4>
 <table class="product-table table">
   <tr *ngFor="let product of round.products;">
     <td class="product-img">
       <div class="product-img-placeholder"></div>
     </td>
     <td class="product-title">{{product.name}}</td>
-    <td class="product-price">£{{product.price}}</td>
+    <td class="product-price">£{{product.price | number:'1.2-2'}}</td>
     <td class="product-qty">{{product.qty}}</td>
     <td class="product-more"><a href="javascript:void(0)" (click)="product.increaseQty()">More</a></td>
     <td class="product-Less"><a href="javascript:void(0)" (click)="decreaseQty(product)">Less</a></td>

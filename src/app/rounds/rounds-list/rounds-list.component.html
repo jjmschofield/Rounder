@@ -7,7 +7,7 @@
       {{round.timestamp | date:"EEEE dd, MMMM y"}}
     </td>
     <td class="round-cost">
-      £{{round.getCost()}}
+      £{{round.getCost() | number:'1.2-2'}}
     </td>
     <td class="round-view">
       <a href="javascript:void(0)" (click)="select(round.id)">View</a>

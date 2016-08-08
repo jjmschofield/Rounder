@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { NightOutModel } from '../../shared/models/night-out.model';
@@ -8,7 +8,7 @@ import { NightOutModel } from '../../shared/models/night-out.model';
   selector: 'nights-out-list',
   templateUrl: './nights-out-list.component.html',
   directives: [ROUTER_DIRECTIVES],
-  pipes: [DatePipe],
+  pipes: [DatePipe, DecimalPipe],
   styleUrls: ['./nights-out-list.component.scss']
 })
 export class NightsOutListComponent implements OnInit {

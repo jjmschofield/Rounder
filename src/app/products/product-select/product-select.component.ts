@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
 import { ProductModel } from '../../shared/models/product.model'
 import { ProductService } from '../product.service'
@@ -6,6 +7,7 @@ import { ProductService } from '../product.service'
 @Component({
   selector: 'product-select',
   providers: [ProductService],
+  pipes: [DecimalPipe],
   templateUrl: './product-select.component.html',
   styleUrls: ['./product-select.component.scss']
 })

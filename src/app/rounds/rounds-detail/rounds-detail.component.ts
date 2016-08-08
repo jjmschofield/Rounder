@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DecimalPipe } from '@angular/common';
 
 import { NightsOutService } from '../../nights-out/nights-out.service';
 import { RoundModel } from '../../shared/models/round.model';
@@ -10,6 +11,7 @@ import { ProductModel } from '../../shared/models/product.model'
   selector: 'rounds-detail',
   templateUrl: './rounds-detail.component.html',
   directives: [ProductSelectComponent],
+  pipes: [DecimalPipe],
   styleUrls: ['./rounds-detail.component.scss']
 })
 export class RoundsDetailComponent implements OnInit {
