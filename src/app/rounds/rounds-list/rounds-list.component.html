@@ -1,6 +1,8 @@
-<div class="card card-block text-xs-center" *ngFor="let round of rounds">
+<div class="card card-block text-xs-center"
+     *ngFor="let round of rounds"
+     (click)="select(round.id)">
   <h4 class="card-title">{{round.bar.name}}</h4>
   <p class="card-text display-4">£{{round.getCost() | number:'1.2-2'}}</p>
   <p class="card-text">{{round.timestamp | date:"EEEE dd, MMMM y"}}</p>
-  <a class="card-link" href="javascript:void(0)" (click)="select(round.id)">View</a>
+  <a class="card-link" href="javascript:void(0)">View</a>
 </div>
