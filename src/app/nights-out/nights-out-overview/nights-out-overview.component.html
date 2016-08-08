@@ -10,9 +10,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+
       <h5>Previous Nights Out</h5>
-      <nights-out-list *ngIf="showPreviousNightsOut()" [nightsOut]="nightsOut"
+      <nights-out-list
+        *ngIf="showPreviousNightsOut()"
+        [nightsOut]="nightsOut"
+        (onSelected)="gotoNightOutDetail($event)"
       ></nights-out-list>
+
       <p *ngIf="!showPreviousNightsOut()">
         Nothing to show here yet. <a href="javascript:void(0)" (click)="startNightOut()">Start a night out?</a>
       </p>

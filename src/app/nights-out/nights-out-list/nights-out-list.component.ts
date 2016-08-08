@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { NightOutModel } from '../../shared/models/night-out.model';
 export class NightsOutListComponent implements OnInit {
 
   @Input() nightsOut : NightOutModel[];
+  @Output() onSelected = new EventEmitter<number>();
 
   constructor () {
   }
@@ -21,4 +22,7 @@ export class NightsOutListComponent implements OnInit {
   ngOnInit () {
   }
 
+  select(nightOut:NightOutModel){
+    this.onSelected.emit(nightOut.id);
+  }
 }
