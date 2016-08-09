@@ -1,7 +1,12 @@
-<div class="card card-block text-xs-center"
+<div class="card text-xs-center"
      *ngFor="let bar of bars;"
      (click)="select(bar)">
-  <img class="card-img-top" src="..." alt="{{bar.name}} Image">
-  <h4 class="card-title">{{bar.name}}</h4>
-  <a href="javascript:void(0)">Select</a>
+
+  <img class="card-img-top" src="{{bar.imgUrl}}" alt="{{bar.name}} Image">
+
+  <div class="card-block">
+    <h4 class="card-title">{{bar.name}}</h4>
+    <a href="javascript:void(0)">Select</a>
+  </div>
+
 </div>
