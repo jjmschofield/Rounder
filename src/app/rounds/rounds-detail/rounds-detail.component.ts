@@ -1,41 +1,56 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 
 import { NightsOutService } from '../../nights-out/nights-out.service';
+
 import { RoundModel } from '../../shared/models/round.model';
+import { ProductModel } from '../../shared/models/product.model';
+
 import { ProductSelectComponent } from '../../products/product-select';
-import { ProductModel } from '../../shared/models/product.model'
+import { NavBarComponent } from '../../nav-bar';
+
 
 @Component({
   selector: 'rounds-detail',
   templateUrl: './rounds-detail.component.html',
-  directives: [ProductSelectComponent],
+  directives: [ProductSelectComponent, NavBarComponent],
   pipes: [DecimalPipe],
   styleUrls: ['./rounds-detail.component.scss']
 })
 export class RoundsDetailComponent implements OnInit {
 
-  nightOutIdSub : any;
+  paramsSub : any;
   round : RoundModel;
+  title : string = "Your Round";
+  backLink : string[] = [];
 
   @ViewChild(ProductSelectComponent)
-  private productSelectComponent: ProductSelectComponent;
+  private productSelectComponent : ProductSelectComponent;
 
   constructor (private nightsOutService : NightsOutService,
-               private router : Router,
                private route : ActivatedRoute) {
+
   }
 
   ngOnInit () {
-    this.nightOutIdSub = this.route.params.subscribe(params => {
+    this.paramsSub = this.route.params.subscribe(params => {
       let nightOutId = params['nightOutId'];
       let roundId = params['roundId'];
-      this.round = this.nightsOutService.getNightOutById(nightOutId).getRoundById(roundId);
+
+      if(this.nightsOutService.setCurrentNightOutFromParams(nightOutId,roundId)){
+        this.round = this.nightsOutService.currentNightOut.getRoundById(Number(roundId));
+        this.backLink = ['/nights-out',nightOutId]
+      }
+
     });
   }
 
-  openProductList(){
+  ngOnDestroy () {
+    this.paramsSub.unsubscribe();
+  }
+
+  openProductList () {
     this.productSelectComponent.openList();
   }
 

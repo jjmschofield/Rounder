@@ -1,30 +1,42 @@
-<div class="jumbotron text-xs-center">
-  <h1 class="display-4">£{{round.getCost() | number:'1.2-2'}}</h1>
-  <p class="lead">Round Total</p>
-  <button class="btn btn-primary" (click)="openProductList()">Add a Product</button>
-</div>
+<nav-bar [title]="title"
+         [showBackButton]="true"
+         [backLink]="backLink">
+</nav-bar>
+<main *ngIf="round">
+  <div class="jumbotron text-xs-center">
+    <h1 class="display-4">£{{round.getCost() | number:'1.2-2'}}</h1>
+    <p class="lead">Round Total</p>
+    <button class="btn btn-primary" (click)="openProductList()">Add a Product</button>
+  </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-block" *ngFor="let product of round.products;">
-        <h4 class="card-title">
-          {{product.name}}
-          <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card card-block" *ngFor="let product of round.products;">
+          <h4 class="card-title">
+            {{product.name}}
+            <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
 
-        <p class="card-text display-4 text-xs-center">
-          x{{product.qty}}
-          <span class="sub-header">&nbsp;(£{{product.price * product.qty | number:'1.2-2'}})</span>
-        </p>
+          <p class="card-text display-4 text-xs-center">
+            x{{product.qty}}
+            <span class="sub-header">&nbsp;(£{{product.price * product.qty | number:'1.2-2'}})</span>
+          </p>
 
-        <div class="qty-controls text-xs-right">
-          <a class="card-link decrease" href="javascript:void(0)" (click)="decreaseQty(product)">-</a>
-          <a class="card-link increase" href="javascript:void(0)" (click)="product.increaseQty()">+</a>
+          <div class="qty-controls pull-xs-left">
+            <a class="card-link decrease" href="javascript:void(0)" (click)="decreaseQty(product)">
+              <i class="fa fa-minus-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="qty-controls pull-xs-right">
+            <a class="card-link increase" href="javascript:void(0)" (click)="product.increaseQty()">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+
         </div>
-
       </div>
     </div>
   </div>
-</div>
 
-<product-select (onSelected)="addProduct($event)" [barId]="round.bar.id"></product-select>
+  <product-select (onSelected)="addProduct($event)" [barId]="round.bar.id"></product-select>
+</main>

@@ -1,26 +1,29 @@
-<div class="jumbotron text-sm-center start-night-out-hero">
-  <h1 class="display-3">Ready to get this party started?</h1>
-  <p class="lead">Rounder will do the counting, just relax and have a good time.</p>
-  <div class="text-xs-center">
-    <button (click)="startNightOut()" class="btn btn-primary btn-lg  btn-lg-fix">
-      Start a Night Out
-    </button>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-
-      <h5>Previous Nights Out</h5>
-      <nights-out-list
-        *ngIf="showPreviousNightsOut()"
-        [nightsOut]="nightsOut"
-        (onSelected)="gotoNightOutDetail($event)"
-      ></nights-out-list>
-
-      <p *ngIf="!showPreviousNightsOut()">
-        Nothing to show here yet. <a href="javascript:void(0)" (click)="startNightOut()">Start a night out?</a>
-      </p>
+<nav-bar></nav-bar>
+<main>
+  <div class="jumbotron text-sm-center start-night-out-hero">
+    <h1 class="display-3">Ready to get this party started?</h1>
+    <p class="lead">Rounder will do the counting, just relax and have a good time.</p>
+    <div class="text-xs-center">
+      <button (click)="startNightOut()" class="btn btn-primary btn-lg  btn-lg-fix">
+        Start a Night Out
+      </button>
     </div>
   </div>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+
+        <h5>Previous Nights Out</h5>
+        <nights-out-list
+          *ngIf="showPreviousNightsOut()"
+          [nightsOut]="nightsOut"
+          (onSelected)="gotoNightOutDetail($event)"
+        ></nights-out-list>
+
+        <p *ngIf="!showPreviousNightsOut()">
+          Nothing to show here yet. <a href="javascript:void(0)" (click)="startNightOut()">Start a night out?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>

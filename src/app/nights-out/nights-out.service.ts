@@ -10,19 +10,6 @@ export class NightsOutService {
   constructor (private router : Router) {
   }
 
-  setCurrentNightOutById (id : number) { // TODO - this feels awkward here, maybe a nav service?
-
-    let nightOut : NightOutModel = this.getNightOutById(id);
-
-    if (nightOut) {
-      this.currentNightOut = nightOut;
-      return this.currentNightOut;
-    }
-
-    this.router.navigate(['/']);
-
-  }
-
   createNightOut () {
     let nightOut = new NightOutModel(
       this.nightsOut.length,
@@ -43,6 +30,51 @@ export class NightsOutService {
     }
 
     return null;
+  }
+
+  setCurrentNightOutById (id : number) {
+
+    let nightOut : NightOutModel = this.getNightOutById(id);
+
+    if (nightOut) {
+      this.currentNightOut = nightOut;
+      return this.currentNightOut;
+    }
+
+  }
+
+  setCurrentNightOutFromParams (nightOutId : string, roundId? : string) {
+    let success = false;
+    let nightOut = this.setCurrentNightOutById(Number(nightOutId));
+
+    if (nightOut) {
+      if (typeof roundId === 'string') {
+        success = this.testRoundExists(nightOut, roundId)
+      }
+      else {
+        success = true;
+      }
+    }
+    else {
+      this.router.navigate(['/']);
+    }
+
+    return success;
+  }
+
+  private testRoundExists (nightOut : NightOutModel, roundId : string) {
+    let exists = false;
+
+    let round = nightOut.getRoundById(Number(roundId));
+
+    if (round) {
+      exists = true;
+    }
+    else {
+      this.router.navigate(['/nights-out/', nightOut.id]);
+    }
+
+    return exists;
   }
 
 }
