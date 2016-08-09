@@ -4,6 +4,7 @@
 </nav-bar>
 <main *ngIf="round">
   <div class="jumbotron text-xs-center">
+    <p class="lead bar-title">{{round.bar.name}}</p>
     <h1 class="display-4">£{{round.getCost() | number:'1.2-2'}}</h1>
     <p class="lead">Round Total</p>
     <button class="btn btn-primary" (click)="openProductList()">Add a Product</button>
