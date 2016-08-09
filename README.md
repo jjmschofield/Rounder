@@ -2,7 +2,7 @@
 
 This project is based on the brief found in BRIEF.md.
 
-Essentially the application is a very round tracking application intended to
+Essentially the application is a very simple round tracking application intended to
 both help revelers organize buying large rounds and to help them assess the damage to their bank account the day after.
 
 An attempt has been made to build a fully operational SPA, however there is no data persistence. Browser refreshes will cause all data to be lost.
