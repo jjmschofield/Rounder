@@ -2,8 +2,8 @@
 
 This project is based on the brief found in BRIEF.md.
 
-Essentially the application is a very simple product, round and night out tracking application intended to
-help revelers organize buying large rounds and assesing the damage to their bank account the day after.
+Essentially the application is a very round tracking application intended to
+both help revelers organize buying large rounds and to help them assess the damage to their bank account the day after.
 
 An attempt has been made to build a fully operational SPA, however there is no data persistence. Browser refreshes will cause all data to be lost.
 
@@ -13,11 +13,11 @@ The original source of the application can be found at https://github.com/jjmsch
 A build of the product is available at: https://jjmschofield.github.io/Rounder/
 
 **The product's primary use case appears to be on small screen sizes. An attempt has been make it fully responsive however.
-It's recommended to view the application with mobile emulation enabled in your browser dev tools (iPhone 6s works well)**
+It's recommended to view the application with mobile emulation enabled in your browser dev tools (iPhone 6s works well).**
 
 ##Tech Stack and Approach
-This project was treated as an opportunity to develop skills with up to the minute and emergent technologies. It is not intended to be
-developed further into a production quality application at this time.
+This project was treated as an opportunity to develop skills with up to the minute and emergent technologies. It is not (at this time) intended to be
+developed further into a production quality application.
 
 As such the following key components can be found within the stack:
 
@@ -29,12 +29,28 @@ As such the following key components can be found within the stack:
 
 This meant that the project took a bit longer then normal, but it has lead to some useful lessons which can be spread throughout a dev team to help others expand their knowledge.
 
-The design of the product is intended to be large and extremely clear to allow it to be used conveniently, fluidly in one hand
-and by unfocused users.
+The design of the UI is intentionally large and clear to allow it to be used conveniently and fluidly by unfocused users.
 
 It is worth considering whether or not the products best incarnation is as a web application however. Users in bars are likely to suffer
 connectivity issues yet still require usage of the app. It may be worth considering either a native or hybrid mobile application to provide
-access to local storage. As the prototype is written in Angular 2 it may be worth considering a mobile app prototype in Ionic.
+a consistent experience. As the prototype is written in Angular 2 it may be worth considering a mobile app prototype in Ionic 2.
+
+##Additional Features Worth Considering
+Some concepts were developed during development which were considered out of scope but which may be useful for the product backlog.
+
+* Bar / Product Search
+* Re-use the same bar
+  * Eg asking a user "Are You Still in Some Bar?" to speed up repetitive bar selections
+* Product Customization
+  * For example, double shots, mixers, ice/no ice etc
+* Promoted Bars
+* Flash sales
+* Bank data aggregation
+  * For example, confirming that your round matches the amount charged
+* Spending Limit, triggers and warnings
+* POS Integrations
+  * Order at table
+  * NFC to purchase and kitchen/bar order
 
 ##API Requirements
 The data schema was extended to include a "NightOut" entity to neatly group rounds for quick data summary by the user.
@@ -51,16 +67,25 @@ There are some outstanding TODO's contained within these files to clear up in fu
 A rough set of endpoints is provided below, though the teams should meet to discuss complexity/object structure based on chosen stack/architecture.
 
 ```GET:/{userId}/nights-out //Lists all night out summaries for user```
+
 ```POST:/{userId}/nights-out //Expected to return a NightOurId in the response body```
+
 ```GET:/{userId}/nights-out/{nightOutId} //Gets a detailed night out object```
 
+
 ```GET:/{userId}/rounds/ //Gets a list of round summary objects```
+
 ```POST:/{userId}/rounds //Expected to return a RoundId in the response body```
+
 ```GET:/{userId}/rounds/{RoundId} //Gets a detailed round object```
+
 ```PATCH:/{userId}/rounds/{RoundId} //Updates a round```
+
 ```DELETE:/{userId}/rounds/{RoundId} //Deletes a round```
 
+
 ```GET:/bars/{search term}?{Lat}{Lang} //Gets geographically scoped bar summary search results```
+
 ```GET:/bars/{barId}/products //Gets products which a bar offers```
 
 ###Additional Data Worth Considering
@@ -68,20 +93,6 @@ A rough set of endpoints is provided below, though the teams should meet to disc
 * Bar Distance to User
 * Bar Address
 * Night Out / Round State (eg open/closed for edits)
-
-##Additional Features Worth Considering
-Some concepts were developed during development which were considered out of scope but which may be useful for the product backlog.
- 
-* Bar / Product Search
-* Re-use the same bar
-  * Eg asking a user "Are You Still in Some Bar?" to speed up repetitive bar selections
-* Product Customization
-  * For example, double shots, mixers, ice/no ice etc
-* Promoted Bars
-* Flash sales
-* Bank data aggregation
-  * For example, confirming that your round matches the amount charged
-* Spending Limit, triggers and warnings
 
 ## Key Lessons
 * Angular2 is a competent and component based framework
