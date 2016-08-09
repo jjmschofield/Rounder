@@ -7,6 +7,7 @@ import { NightsOutService } from '../../nights-out.service';
 import { RoundModel } from '../../shared/models/round.model';
 import { ProductModel } from '../../shared/models/product.model';
 
+import { ProductListComponent } from '../products/products-list';
 import { ProductSelectComponent } from '../products/product-select';
 import { NavBarComponent } from '../../../nav-bar';
 
@@ -14,7 +15,7 @@ import { NavBarComponent } from '../../../nav-bar';
 @Component({
   selector: 'rounds-detail',
   templateUrl: './rounds-detail.component.html',
-  directives: [ProductSelectComponent, NavBarComponent],
+  directives: [ProductSelectComponent, NavBarComponent, ProductListComponent],
   pipes: [DecimalPipe],
   styleUrls: ['./rounds-detail.component.scss']
 })
@@ -56,19 +57,6 @@ export class RoundsDetailComponent implements OnInit {
 
   addProduct (product : ProductModel) {
     this.round.addProduct(product);
-  }
-
-  decreaseQty (product : ProductModel) {
-    if (product.qty > 1) {
-      product.decreaseQty();
-    }
-    else {
-      this.round.products.forEach((roundProduct, index) => { // TODO - this should be abstracted further
-        if (product === roundProduct) {
-          this.round.removeProduct(index);
-        }
-      });
-    }
   }
 
 }

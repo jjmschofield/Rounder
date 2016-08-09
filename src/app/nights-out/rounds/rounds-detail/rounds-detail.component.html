@@ -11,32 +11,7 @@
   </div>
 
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let product of round.products;">
-      <div class="card card-block">
-          <h4 class="card-title">
-            {{product.name}}
-            <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
-
-          <p class="card-text display-4 text-xs-center">
-            x{{product.qty}}
-            <span class="sub-header">&nbsp;(£{{product.price * product.qty | number:'1.2-2'}})</span>
-          </p>
-
-          <div class="qty-controls pull-xs-left">
-            <a class="card-link decrease" href="javascript:void(0)" (click)="decreaseQty(product)">
-              <i class="fa fa-minus-circle" aria-hidden="true"></i>
-            </a>
-          </div>
-          <div class="qty-controls pull-xs-right">
-            <a class="card-link increase" href="javascript:void(0)" (click)="product.increaseQty()">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
+    <product-list [round]="round"></product-list>
   </div>
 
   <product-select (onSelected)="addProduct($event)" [barId]="round.bar.id"></product-select>
