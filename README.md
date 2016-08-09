@@ -30,6 +30,7 @@ As such the following key components can be found within the stack:
 This meant that the project took a bit longer then normal, but it has lead to some useful lessons which can be spread throughout a dev team to help others expand their knowledge.
 
 The design of the UI is intentionally large and clear to allow it to be used conveniently and fluidly by unfocused users.
+As the brief specifies that the look and feel are yet to be determined only functional CSS has been added to the project in addition to the Bootstrap 4 CSS Framework.
 
 It is worth considering whether or not the products best incarnation is as a web application however. Users in bars are likely to suffer
 connectivity issues yet still require usage of the app. It may be worth considering either a native or hybrid mobile application to provide
