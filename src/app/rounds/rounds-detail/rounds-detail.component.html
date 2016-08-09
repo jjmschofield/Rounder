@@ -11,8 +11,8 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="card card-block" *ngFor="let product of round.products;">
+      <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let product of round.products;">
+      <div class="card card-block">
           <h4 class="card-title">
             {{product.name}}
             <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
