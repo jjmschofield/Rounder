@@ -14,7 +14,7 @@ import { NightsOutService } from '../../../nights-out/nights-out.service';
   directives: [BarsNearByComponent, NavBarComponent],
   styleUrls: ['./rounds-create.component.scss']
 })
-export class RoundsCreateComponent implements OnInit {
+export class RoundsCreateComponent implements OnInit, OnDestroy {
 
   paramSub : any;
   title : string = 'Start a Round';
@@ -29,7 +29,7 @@ export class RoundsCreateComponent implements OnInit {
     this.paramSub = this.route.params.subscribe(params => {
       let nightOutId = params['nightOutId'];
       this.nightsOutService.setCurrentNightOutFromParams(nightOutId);
-      this.backLink = ['/nights-out/', nightOutId]
+      this.backLink = ['/nights-out/', nightOutId];
     });
   }
 

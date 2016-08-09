@@ -14,7 +14,7 @@ import { NightsOutService } from '../../nights-out/nights-out.service';
   templateUrl: './nights-out-detail.component.html',
   styleUrls: ['./nights-out-detail.component.scss']
 })
-export class NightsOutDetailComponent implements OnInit {
+export class NightsOutDetailComponent implements OnInit, OnDestroy {
 
   paramsSub : any;
   nightOut : NightOutModel;

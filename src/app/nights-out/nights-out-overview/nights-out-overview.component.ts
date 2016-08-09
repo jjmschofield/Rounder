@@ -36,7 +36,7 @@ export class NightsOutOverviewComponent implements OnInit {
   }
 
   gotoNightOutDetail(nightOutId:number){
-    this.router.navigate(['/nights-out/',nightOutId])
+    this.router.navigate(['/nights-out/',nightOutId]);
   }
 }
 

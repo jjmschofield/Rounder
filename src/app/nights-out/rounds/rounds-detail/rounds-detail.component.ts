@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 
@@ -19,7 +19,7 @@ import { NavBarComponent } from '../../../nav-bar';
   pipes: [DecimalPipe],
   styleUrls: ['./rounds-detail.component.scss']
 })
-export class RoundsDetailComponent implements OnInit {
+export class RoundsDetailComponent implements OnInit, OnDestroy {
 
   paramsSub : any;
   round : RoundModel;
@@ -41,7 +41,7 @@ export class RoundsDetailComponent implements OnInit {
 
       if(this.nightsOutService.setCurrentNightOutFromParams(nightOutId,roundId)){
         this.round = this.nightsOutService.currentNightOut.getRoundById(Number(roundId));
-        this.backLink = ['/nights-out',nightOutId]
+        this.backLink = ['/nights-out',nightOutId];
       }
 
     });

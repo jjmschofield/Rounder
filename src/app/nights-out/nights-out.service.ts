@@ -49,7 +49,7 @@ export class NightsOutService {
 
     if (nightOut) {
       if (typeof roundId === 'string') {
-        success = this.testRoundExists(nightOut, roundId)
+        success = this.testRoundExists(nightOut, roundId);
       }
       else {
         success = true;
