@@ -16,12 +16,20 @@ export class RoundsListComponent implements OnInit {
   @Input() rounds : RoundModel[];
   @Output() onSelected = new EventEmitter<number>();
 
+  orderedRounds : RoundModel[];
+
   constructor () {}
 
-  ngOnInit () {}
+  ngOnInit () {
+    this.orderRoundsByDate();
+  }
 
   select (id : number) {
     this.onSelected.emit(id);
+  }
+
+  orderRoundsByDate(){ //Orders by date desc
+    this.orderedRounds = this.rounds.sort((round1: RoundModel,round2: RoundModel) => round2.timestamp - round1.timestamp);
   }
 
 }

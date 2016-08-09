@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let round of rounds">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let round of orderedRounds">
     <div class="card card-block text-xs-center"
          (click)="select(round.id)">
       <h4 class="card-title">{{round.bar.name}}</h4>
       <p class="card-text display-4">£{{round.getCost() | number:'1.2-2'}}</p>
-      <p class="card-text">{{round.timestamp | date:"EEEE dd, MMMM y"}}</p>
+      <p class="card-text">{{round.timestamp | date:"hh:mm EEEE dd, MMMM y"}}</p>
       <a class="card-link" href="javascript:void(0)">View</a>
     </div>
   </div>

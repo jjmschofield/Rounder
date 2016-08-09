@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let nightOut of nightsOut; let i = index">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let nightOut of orderedNightsOut;">
     <div class="card card-block text-xs-center"
          (click)="select(nightOut)">
       <h4 class="card-title">{{nightOut.timestamp | date:"EEEE dd, MMMM y"}}</h4>

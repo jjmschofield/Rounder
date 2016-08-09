@@ -26,7 +26,7 @@ export class RoundModel {
       existingProduct.increaseQty();
     }
     else{
-      this.products.push(product);
+      this.products.unshift(product);
     }
 
     return this.products;
