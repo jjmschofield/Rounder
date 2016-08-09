@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let nightOut of orderedNightsOut;">
+    <div class="card card-block text-xs-center"
+         (click)="select(nightOut)">
+      <h4 class="card-title">{{nightOut.timestamp | date:"EEEE dd, MMMM y"}}</h4>
+      <p class="card-text display-4">£{{nightOut.getCost() | number:'1.2-2'}}</p>
+      <a href="javascript:void(0)">View</a>
+    </div>
+  </div>
+</div>

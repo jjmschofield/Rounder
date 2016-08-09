@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let bar of bars;">
+    <div class="card text-xs-center"
+         (click)="select(bar)">
+
+      <img class="card-img-top" src="{{bar.imgUrl}}" alt="{{bar.name}} Image">
+
+      <div class="card-block">
+        <h4 class="card-title">{{bar.name}}</h4>
+        <a href="javascript:void(0)">Select</a>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="modal fade" role="dialog" [ngClass]="{'in': modalOpen, 'out': modalOpen, 'modal-open': modalOpen}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeList()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Select a Product</h4>
+      </div>
+      <div class="modal-body">
+        <div class="card card-block text-xs-center"
+             *ngFor="let product of products"
+             (click)="select(product)">
+          <h4 class="card-title">{{product.name}}</h4>
+          <p class="card-text display-4">£{{product.price | number:'1.2-2'}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

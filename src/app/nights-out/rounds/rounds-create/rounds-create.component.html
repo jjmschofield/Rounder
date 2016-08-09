@@ -1,0 +1,18 @@
+<nav-bar [title]="title"
+         [showBackButton]="true"
+         [backLink]="backLink">
+</nav-bar>
+<main>
+  <div class="jumbotron text-sm-center">
+    <h1 class="display-4">What bar are you in?</h1>
+    <p class="lead">It's OK, we won't tell anyone.</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h4><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Bars Near You</h4>
+      </div>
+    </div>
+    <bars-near-by (onSelected)="selectBar($event)"></bars-near-by>
+  </div>
+</main>

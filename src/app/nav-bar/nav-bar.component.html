@@ -1,0 +1,11 @@
+<header>
+  <nav class="navbar navbar-dark bg-inverse">
+    <a *ngIf="showBackButton" href="javascript:void(0)" class="navbar-brand"
+       (click)="goBack()">
+      <i class="fa fa-caret-left" aria-hidden="true"></i>
+    </a>
+    <a class="navbar-brand" href="javascript:void(0)" (click)="goBack()" >
+      {{title}}
+    </a>
+  </nav>
+</header>
