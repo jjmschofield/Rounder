@@ -1,17 +1,43 @@
-<h4>Round Total: £{{round.getCost()}}</h4>
-<table class="product-table table">
-  <tr *ngFor="let product of round.products;">
-    <td class="product-img">
-      <div class="product-img-placeholder"></div>
-    </td>
-    <td class="product-title">{{product.name}}</td>
-    <td class="product-price">£{{product.price}}</td>
-    <td class="product-qty">{{product.qty}}</td>
-    <td class="product-more"><a href="javascript:void(0)" (click)="product.increaseQty()">More</a></td>
-    <td class="product-Less"><a href="javascript:void(0)" (click)="decreaseQty(product)">Less</a></td>
-  </tr>
-</table>
+<nav-bar [title]="title"
+         [showBackButton]="true"
+         [backLink]="backLink">
+</nav-bar>
+<main *ngIf="round">
+  <div class="jumbotron text-xs-center">
+    <p class="lead bar-title">{{round.bar.name}}</p>
+    <h1 class="display-4">£{{round.getCost() | number:'1.2-2'}}</h1>
+    <p class="lead">Round Total</p>
+    <button class="btn btn-primary" (click)="openProductList()">Add a Product</button>
+  </div>
 
-<h4>Select A Product</h4>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let product of round.products;">
+      <div class="card card-block">
+          <h4 class="card-title">
+            {{product.name}}
+            <span class="sub-header">&nbsp;£{{product.price | number:'1.2-2'}}</span></h4>
 
-<product-select (onSelected)="addProduct($event)" [barId]="round.bar.id"></product-select>
+          <p class="card-text display-4 text-xs-center">
+            x{{product.qty}}
+            <span class="sub-header">&nbsp;(£{{product.price * product.qty | number:'1.2-2'}})</span>
+          </p>
+
+          <div class="qty-controls pull-xs-left">
+            <a class="card-link decrease" href="javascript:void(0)" (click)="decreaseQty(product)">
+              <i class="fa fa-minus-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="qty-controls pull-xs-right">
+            <a class="card-link increase" href="javascript:void(0)" (click)="product.increaseQty()">
+              <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <product-select (onSelected)="addProduct($event)" [barId]="round.bar.id"></product-select>
+</main>

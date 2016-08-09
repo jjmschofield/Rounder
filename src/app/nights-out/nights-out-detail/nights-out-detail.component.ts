@@ -1,50 +1,53 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { RoundModel } from '../../shared/models/round.model';
+import { NavBarComponent } from '../../nav-bar';
+
+import { NightOutModel } from '../../shared/models/night-out.model';
+
 import { RoundsListComponent } from '../../rounds/rounds-list';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
   selector: 'nights-out-detail',
-  directives: [RoundsListComponent, ROUTER_DIRECTIVES],
+  directives: [RoundsListComponent, ROUTER_DIRECTIVES, NavBarComponent],
   templateUrl: './nights-out-detail.component.html',
   styleUrls: ['./nights-out-detail.component.scss']
 })
 export class NightsOutDetailComponent implements OnInit {
 
-  nightOutIdSub : any;
-  nightOutId : number;
-  rounds : RoundModel[];
+  paramsSub : any;
+  nightOut : NightOutModel;
+  title : string = 'Your Night Out';
+  backLink : string[] = ['/nights-out'];
 
   constructor (private nightsOutService : NightsOutService,
                private router : Router,
                private route : ActivatedRoute) {
+
   }
 
   ngOnInit () {
-    this.nightOutIdSub = this.route.params.subscribe(params => {
-      let id = params['nightOutId'];
-
-      let nightOut = this.nightsOutService.setCurrentNightOutById(id);
-
-      if (nightOut) {
-        this.nightOutId = this.nightsOutService.currentNightOut.id;
-        this.rounds = this.nightsOutService.currentNightOut.rounds;
-      }
+    this.paramsSub = this.route.params.subscribe(params => {
+      let nightOutId = params['nightOutId'];
+      this.nightsOutService.setCurrentNightOutFromParams(nightOutId);
+      this.nightOut = this.nightsOutService.currentNightOut;
     });
   }
 
   ngOnDestroy () {
-    this.nightOutIdSub.unsubscribe();
+    this.paramsSub.unsubscribe();
   }
 
   showPreviousRounds () {
-    //return this.rounds.length > 0;
-    return true;
+    return this.nightOut.rounds.length > 0;
+  }
+
+  createRound () {
+    this.router.navigate(["/nights-out/", this.nightOut.id, "/rounds/create"]);
   }
 
   viewRound (roundId : number) {
-    this.router.navigate(['/nights-out', this.nightOutId, '/rounds', roundId]);
+    this.router.navigate(['/nights-out', this.nightOut.id, '/rounds', roundId]);
   }
 }

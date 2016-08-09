@@ -1,19 +1,12 @@
 import { BarModel } from './bar.model';
 
 export const BarMock : BarModel[] = [
-  new BarModel(0, 'Some BarModel 0'),
-  new BarModel(1, 'Some BarModel 1'),
-  new BarModel(2, 'Some BarModel 2'),
-  new BarModel(3, 'Some BarModel 3'),
-  new BarModel(4, 'Some BarModel 4'),
-  new BarModel(5, 'Some BarModel 5'),
-  new BarModel(6, 'Some BarModel 6'),
-  new BarModel(7, 'Some BarModel 7'),
-  new BarModel(8, 'Some BarModel 8'),
-  new BarModel(9, 'Some BarModel 9'),
-  new BarModel(10, 'Some BarModel 10'),
-  new BarModel(11, 'Some BarModel 11'),
-  new BarModel(12, 'Some BarModel 12'),
+  new BarModel(0, "Bannerman's Bar",0,0,'/img/bannermans.jpg'),
+  new BarModel(1, 'BrewDog Edinburgh',0,0,'/img/brew-dog.jpg'),
+  new BarModel(2, 'Captains Bar',0,0,'/img/the-captains-bar.jpg'),
+  new BarModel(3, 'The Holyrood 9A',0,0,'/img/the-9a.jpg'),
+  new BarModel(4, 'The Southern',0,0,'/img/the-southern.jpg'),
+  new BarModel(5, 'Jazz Bar',0,0,'/img/the-jazz-bar.jpg')
 ];
 
 

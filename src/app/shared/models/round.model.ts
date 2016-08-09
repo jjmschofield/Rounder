@@ -19,7 +19,16 @@ export class RoundModel {
   // }
 
   addProduct (product : ProductModel) {
-    this.products.push(product);
+
+    let existingProduct = this.findExistingProduct(product);
+
+    if(existingProduct){
+      existingProduct.increaseQty();
+    }
+    else{
+      this.products.unshift(product);
+    }
+
     return this.products;
   }
 
@@ -36,5 +45,14 @@ export class RoundModel {
     }
 
     return cost;
+  }
+
+  findExistingProduct(product: ProductModel){
+    for (let existingProduct of this.products){
+      if(existingProduct.id === product.id){
+        return existingProduct;
+      }
+    }
+    return null;
   }
 }

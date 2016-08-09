@@ -1,0 +1,14 @@
+.card {
+  cursor: pointer;
+
+  &:hover {
+    border-color: $link-color;
+    transition : border 300ms ease-out;
+  }
+
+  &:focus {
+    border-color: $link-hover-color;
+    transition : border 100ms ease-out;
+  }
+
+}

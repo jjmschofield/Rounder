@@ -1,20 +1,25 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { NavBarComponent } from '../../nav-bar';
+
 import { BarModel } from '../../shared/models/bar.model';
-import { NightsOutService } from '../../nights-out/nights-out.service';
 import { BarsNearByComponent } from '../../bars/bars-near-by';
 import { BarsSearchComponent } from '../../bars/bars-search';
+
+import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
   selector: 'rounds-create',
   templateUrl: './rounds-create.component.html',
-  directives: [BarsNearByComponent, BarsSearchComponent],
+  directives: [BarsNearByComponent, BarsSearchComponent, NavBarComponent],
   styleUrls: ['./rounds-create.component.scss']
 })
 export class RoundsCreateComponent implements OnInit {
 
-  nightOutIdSub : any;
+  paramSub : any;
+  title : string = 'Start a Round';
+  backLink : string[] = [];
 
   constructor (private nightsOutService : NightsOutService,
                private router : Router,
@@ -22,14 +27,15 @@ export class RoundsCreateComponent implements OnInit {
   }
 
   ngOnInit () {
-    this.nightOutIdSub = this.route.params.subscribe(params => {
-      let id = params['nightOutId'];
-      this.nightsOutService.setCurrentNightOutById(id);
+    this.paramSub = this.route.params.subscribe(params => {
+      let nightOutId = params['nightOutId'];
+      this.nightsOutService.setCurrentNightOutFromParams(nightOutId);
+      this.backLink = ['/nights-out/', nightOutId]
     });
   }
 
   ngOnDestroy () {
-    this.nightOutIdSub.unsubscribe();
+    this.paramSub.unsubscribe();
   }
 
   selectBar (bar : BarModel) {

@@ -1,5 +1,21 @@
-.product-img-placeholder {
-  height: 125px;
-  width: 100px;
-  background-color: grey;
+@import '../../../style/variables';
+
+:host {
+  .qty-controls {
+    font-size: 2rem;
+    line-height: 0.75;
+
+    a.increase {
+      color: $brand-success;
+    }
+
+    a.decrease {
+      color: $brand-danger;
+    }
+
+  }
+
+  .bar-title{
+    margin-bottom:0;
+  }
 }

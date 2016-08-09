@@ -1,16 +1,12 @@
-<table class="rounds-table table">
-  <tr *ngFor="let round of rounds">
-    <td class="round-date">
-      {{round.bar.name}}
-    </td>
-    <td class="round-date">
-      {{round.timestamp}}
-    </td>
-    <td class="round-cost">
-      £{{round.getCost()}}
-    </td>
-    <td class="round-view">
-      <a href="javascript:void(0)" (click)="select(round.id)">View</a>
-    </td>
-  </tr>
-</table>
+<div class="row">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let round of orderedRounds">
+    <div class="card card-block text-xs-center"
+         (click)="select(round.id)">
+      <h4 class="card-title">{{round.bar.name}}</h4>
+      <p class="card-text display-4">£{{round.getCost() | number:'1.2-2'}}</p>
+      <p class="card-text">{{round.timestamp | date:"HH:mm EEEE dd, MMMM y"}}</p>
+      <a class="card-link" href="javascript:void(0)">View</a>
+    </div>
+  </div>
+</div>
+
