@@ -104,3 +104,17 @@ Be aware that there isn't an easy component in your toolbox for these common ope
 (there may be a more 'angular' way to handle this, however it wasn't clear what that was from their current dev docs)
 * Webpack is a really nice alternative to Gulp/Grunt and should seriously be considered for any future projects
 * Strictly typed javascript is extremely useful
+
+## Running the Project
+* Clone this repo
+* npm install
+* npm start
+* Open http://localhost:8080
+
+### Other tasks
+* npm test
+  * Runs unit tests, most of the code is not covered and there are intentionally failing tests in place to indicate the issue
+  however there is some coverage of the models
+* npm build
+  * Packages the application for deployment
+  * Remember to update the base html tag to your actual path
