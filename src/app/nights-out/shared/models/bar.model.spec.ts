@@ -11,10 +11,6 @@ describe('Shared', () => {
 
       });
 
-      it('should have tests', () => {
-        fail();
-      });
-
     });
 
   });

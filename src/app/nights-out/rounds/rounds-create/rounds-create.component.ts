@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NavBarComponent } from '../../../nav-bar';
 
 import { BarModel } from '../../shared/models/bar.model';
-import { BarsNearByComponent } from '../bars/bars-near-by';
+import { BarsNearByComponent } from './bars/bars-near-by';
 
 import { NightsOutService } from '../../../nights-out/nights-out.service';
 

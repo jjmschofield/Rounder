@@ -3,7 +3,7 @@ import { DecimalPipe } from '@angular/common';
 
 
 
-import { ProductModel } from '../../../shared/models/product.model'
+import { ProductModel } from '../../../../shared/models/product.model'
 import { ProductService } from '../product.service'
 
 @Component({

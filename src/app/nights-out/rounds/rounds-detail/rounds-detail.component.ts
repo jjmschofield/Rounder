@@ -7,8 +7,8 @@ import { NightsOutService } from '../../nights-out.service';
 import { RoundModel } from '../../shared/models/round.model';
 import { ProductModel } from '../../shared/models/product.model';
 
-import { ProductListComponent } from '../products/products-list';
-import { ProductSelectComponent } from '../products/product-select';
+import { ProductListComponent } from './products/products-list';
+import { ProductSelectComponent } from './products/product-select';
 import { NavBarComponent } from '../../../nav-bar';
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { BarModel } from '../../../shared/models/bar.model';
+import { BarModel } from '../../../../shared/models/bar.model';
 import { BarService } from '../bar.service';
 
 @Component({

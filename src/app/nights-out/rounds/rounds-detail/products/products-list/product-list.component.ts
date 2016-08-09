@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 
-import { RoundModel } from '../../../shared/models/round.model';
-import { ProductModel } from '../../../shared/models/product.model';
+import { RoundModel } from '../../../../shared/models/round.model';
+import { ProductModel } from '../../../../shared/models/product.model';
 
 @Component({
   selector: 'product-list',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BarModel } from '../../shared/models/bar.model';
-import { BarMock } from '../../shared/models/bar.mock';
+import { BarModel } from '../../../shared/models/bar.model';
+import { BarMock } from '../../../shared/models/bar.mock';
 
 @Injectable()
 export class BarService {
