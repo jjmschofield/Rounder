@@ -5,7 +5,7 @@ import { NavBarComponent } from '../../nav-bar';
 
 import { NightsOutListComponent } from '../nights-out-list';
 import { NightsOutService } from '../nights-out.service';
-import { NightOutModel } from '../../shared/models/night-out.model';
+import { NightOutModel } from '../shared/models/night-out.model';
 
 @Component({
   selector: 'nights-out',
@@ -36,7 +36,7 @@ export class NightsOutOverviewComponent implements OnInit {
   }
 
   gotoNightOutDetail(nightOutId:number){
-    this.router.navigate(['/nights-out/',nightOutId])
+    this.router.navigate(['/nights-out/',nightOutId]);
   }
 }
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { NightOutModel } from '../shared/models/night-out.model';
+import { NightOutModel } from './shared/models/night-out.model';
 
 @Injectable()
 export class NightsOutService {
@@ -49,7 +49,7 @@ export class NightsOutService {
 
     if (nightOut) {
       if (typeof roundId === 'string') {
-        success = this.testRoundExists(nightOut, roundId)
+        success = this.testRoundExists(nightOut, roundId);
       }
       else {
         success = true;

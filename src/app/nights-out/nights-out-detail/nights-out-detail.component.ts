@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { NavBarComponent } from '../../nav-bar';
 
-import { NightOutModel } from '../../shared/models/night-out.model';
+import { NightOutModel } from '../shared/models/night-out.model';
 
-import { RoundsListComponent } from '../../rounds/rounds-list';
+import { RoundsListComponent } from '../rounds/rounds-list';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { NightsOutService } from '../../nights-out/nights-out.service';
   templateUrl: './nights-out-detail.component.html',
   styleUrls: ['./nights-out-detail.component.scss']
 })
-export class NightsOutDetailComponent implements OnInit {
+export class NightsOutDetailComponent implements OnInit, OnDestroy {
 
   paramsSub : any;
   nightOut : NightOutModel;
