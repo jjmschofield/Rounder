@@ -3,9 +3,9 @@ import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { NavBarComponent } from '../../nav-bar';
 
-import { NightOutModel } from '../../shared/models/night-out.model';
+import { NightOutModel } from '../shared/models/night-out.model';
 
-import { RoundsListComponent } from '../../rounds/rounds-list';
+import { RoundsListComponent } from '../rounds/rounds-list';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
