@@ -39,16 +39,18 @@ a consistent experience. As the prototype is written in Angular 2 it may be wort
 ##Additional Features Worth Considering
 Some concepts were developed during development which were considered out of scope but which may be useful for the product backlog.
 
+* Adaptive front screen which is aware of whether a user is currently on a night out
+* "DONE" or "FINISH" buttons for round detail stage
 * Bar / Product Search
-* Re-use the same bar
-  * Eg asking a user "Are You Still in Some Bar?" to speed up repetitive bar selections
+* Prompt to user to reuse the last bar to prevent them searching
+  * Eg asking a user "Are You Still in {Some Bar}?" to speed up repetitive bar selections
 * Product Customization
-  * For example, double shots, mixers, ice/no ice etc
+  * eg double shots, drink size, mixers, ice/no ice etc
+* Spending Limit, triggers and warnings
 * Promoted Bars
 * Flash sales
 * Bank data aggregation
-  * For example, confirming that your round matches the amount charged
-* Spending Limit, triggers and warnings
+  * eg confirming that your round matches the amount charged
 * POS Integrations
   * Order at table
   * NFC to purchase and kitchen/bar order
