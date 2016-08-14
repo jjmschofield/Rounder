@@ -1,6 +1,6 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { NightsOutComponent } from './nights-out';
-import { NightsOutDetailComponent } from './nights-out/nights-out-detail';
+import { NightsOutDetailComponent } from './rounds/';
 import { RoundsCreateComponent } from './rounds/rounds-create';
 import { RoundsDetailComponent } from './rounds/rounds-detail';
 
