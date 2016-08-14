@@ -4,12 +4,12 @@ import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { NightOutModel } from '../shared/models/night-out.model';
 import { NightsOutService } from '../nights-out/nights-out.service';
 
-import { RoundsListComponent } from './rounds-list';
+import { RoundsCardListComponent } from './rounds-card-list';
 import { NavBarComponent } from '../nav-bar';
 
 @Component({
   selector: 'rounds',
-  directives: [RoundsListComponent, NavBarComponent, ROUTER_DIRECTIVES],
+  directives: [RoundsCardListComponent, NavBarComponent, ROUTER_DIRECTIVES],
   templateUrl: './rounds.component.html',
   styleUrls: ['./rounds.component.scss']
 })

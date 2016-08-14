@@ -1,18 +1,16 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { DatePipe, DecimalPipe } from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { RoundModel } from '../../shared/models/round.model';
 import { RoundsCardComponent } from '../rounds-card';
 
 @Component({
-  selector: 'rounds-list',
-  templateUrl: './rounds-list.component.html',
+  selector: 'rounds-card-list',
+  templateUrl: './rounds-card-list.component.html',
   directives: [ROUTER_DIRECTIVES, RoundsCardComponent],
-  pipes: [DatePipe, DecimalPipe],
-  styleUrls: ['./rounds-list.component.scss']
+  styleUrls: ['./rounds-card-list.component.scss']
 })
-export class RoundsListComponent implements OnInit {
+export class RoundsCardListComponent implements OnInit {
 
   @Input() rounds : RoundModel[];
   @Output() onSelected = new EventEmitter<number>();

@@ -30,8 +30,8 @@
     <div class="row">
       <div class="col-xs-12">
         <h5>Previous Rounds</h5>
-        <rounds-list *ngIf="hasRounds()" [rounds]="nightOut.rounds"
-                     (onSelected)="viewRound($event)"></rounds-list>
+        <rounds-card-list *ngIf="hasRounds()" [rounds]="nightOut.rounds"
+                     (onSelected)="viewRound($event)"></rounds-card-list>
 
         <p *ngIf="!hasRounds()">
           Nothing to show here yet. <a href="javascript:void(0)" (click)="createRound()">Get a round in?</a>
