@@ -39,8 +39,6 @@ a consistent experience. As the prototype is written in Angular 2 it may be wort
 ##Additional Features Worth Considering
 Some concepts were developed during development which were considered out of scope but which may be useful for the product backlog.
 
-* Adaptive front screen which is aware of whether a user is currently on a night out
-* "DONE" or "FINISH" buttons for round detail stage
 * Bar / Product Search
 * Prompt to user to reuse the last bar to prevent them searching
   * Eg asking a user "Are You Still in {Some Bar}?" to speed up repetitive bar selections
@@ -86,8 +84,9 @@ A rough set of endpoints is provided below, though the teams should meet to disc
 
 ```DELETE:/{userId}/rounds/{RoundId} //Deletes a round```
 
+```GET:/bars?{Lat}{Lang} //Gets geographically scoped bar summary search results```
 
-```GET:/bars/{search term}?{Lat}{Lang} //Gets geographically scoped bar summary search results```
+```GET:/bars/search/{search term}?{Lat}{Lang} //Gets geographically scoped bar summary search results```
 
 ```GET:/bars/{barId}/products //Gets products which a bar offers```
 
@@ -121,3 +120,13 @@ Be aware that there isn't an easy component in your toolbox for these common ope
 * npm build
   * Packages the application for deployment
   * Remember to update the base html tag to your actual path
+
+## Updates
+### Prototype-02
+* Added action functionality to nav bar
+* Added "Done" to rounds scene
+* Added "Total" to rounds scene
+* Added "Done" to round edit scene
+* Restructured application
+
+

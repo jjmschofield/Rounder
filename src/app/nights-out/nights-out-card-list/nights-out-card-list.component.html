@@ -1,0 +1,5 @@
+<div class="row">
+  <div class="col-xs-12 col-lg-6 col-xl-4" *ngFor="let nightOut of orderedNightsOut;" (click)="select(nightOut)">
+    <nights-out-card [nightOut]="nightOut"></nights-out-card>
+  </div>
+</div>
