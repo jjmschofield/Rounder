@@ -1,0 +1,44 @@
+<nav-bar
+  [title]="title"
+  [backLink]="backLink"
+  [action]="done">
+</nav-bar>
+
+<main *ngIf="nightOut">
+  <div class="jumbotron text-sm-center">
+
+    <div *ngIf="!hasRounds()">
+      <h1 class="display-3">Is it your turn at the bar?</h1>
+      <p class="lead">Don't worry, just start a round and add your drinks. We aren't paying though.</p>
+    </div>
+
+    <div *ngIf="hasRounds()" class="text-xs-center">
+      <p class="lead night-out-date">{{nightOut.timestamp | date:"EEEE dd, MMMM y"}}</p>
+      <h1 class="display-4">£{{nightOut.getCost() | number:'1.2-2'}}</h1>
+      <p class="lead">Night Out Total</p>
+    </div>
+
+    <div class="text-xs-center">
+      <button class="btn btn-primary btn-lg btn-lg-fix"
+              (click)="createRound()">
+        {{createRoundLabel()}}
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h5>Previous Rounds</h5>
+        <rounds-card-list *ngIf="hasRounds()" [rounds]="nightOut.rounds"
+                     (onSelected)="viewRound($event)"></rounds-card-list>
+
+        <p *ngIf="!hasRounds()">
+          Nothing to show here yet. <a href="javascript:void(0)" (click)="createRound()">Get a round in?</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+

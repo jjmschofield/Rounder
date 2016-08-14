@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 export class NavBarComponent implements OnInit {
 
   @Input() title : string = 'Rounder';
-  @Input() backLink : string[] = [];
-  @Input() showBackButton : boolean = false;
-
+  @Input() backLink : string[];
+  @Input() action : () => void;
+  @Input() actionLabel : string = "Done";
 
   constructor (private router : Router) {
   }
