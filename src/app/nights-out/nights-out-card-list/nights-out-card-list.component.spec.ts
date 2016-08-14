@@ -4,15 +4,15 @@ import {
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
-import { NightsOutListComponent } from './nights-out-list.component';
+import { NightsOutCardListComponent } from './nights-out-card-list.component';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEach(() => {
-    addProviders([NightsOutListComponent]);
+    addProviders([NightsOutCardListComponent]);
   });
 
-  it('should have tests', inject([NightsOutListComponent], (underTest) => {
+  it('should have tests', inject([NightsOutCardListComponent], (underTest) => {
     fail();
   }));
 

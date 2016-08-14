@@ -6,13 +6,13 @@ import { NightOutModel } from '../../shared/models/night-out.model';
 import { NightsOutCardComponent } from '../nights-out-card'
 
 @Component({
-  selector: 'nights-out-list',
-  templateUrl: './nights-out-list.component.html',
+  selector: 'nights-out-card-list',
+  templateUrl: './nights-out-card-list.component.html',
   directives: [ROUTER_DIRECTIVES, NightsOutCardComponent],
   pipes: [DatePipe, DecimalPipe],
-  styleUrls: ['./nights-out-list.component.scss']
+  styleUrls: ['./nights-out-card-list.component.scss']
 })
-export class NightsOutListComponent implements OnInit {
+export class NightsOutCardListComponent implements OnInit {
 
   @Input() nightsOut : NightOutModel[];
   @Output() onSelected = new EventEmitter<number>();
