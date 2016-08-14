@@ -13,13 +13,13 @@ import { NavBarComponent } from '../../nav-bar';
 
 
 @Component({
-  selector: 'rounds-detail',
-  templateUrl: './rounds-detail.component.html',
+  selector: 'rounds-edit',
+  templateUrl: './rounds-edit.component.html',
   directives: [ProductSelectComponent, NavBarComponent, ProductListComponent],
   pipes: [DecimalPipe],
-  styleUrls: ['./rounds-detail.component.scss']
+  styleUrls: ['./rounds-edit.component.scss']
 })
-export class RoundsDetailComponent implements OnInit, OnDestroy {
+export class RoundsEditComponent implements OnInit, OnDestroy {
 
   paramsSub : any;
   round : RoundModel;
