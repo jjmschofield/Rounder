@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 
 import { NightsOutService } from '../../nights-out.service';
@@ -30,7 +30,8 @@ export class RoundsDetailComponent implements OnInit, OnDestroy {
   private productSelectComponent : ProductSelectComponent;
 
   constructor (private nightsOutService : NightsOutService,
-               private route : ActivatedRoute) {
+               private route : ActivatedRoute,
+               private router : Router) {
 
   }
 
@@ -39,9 +40,9 @@ export class RoundsDetailComponent implements OnInit, OnDestroy {
       let nightOutId = params['nightOutId'];
       let roundId = params['roundId'];
 
-      if(this.nightsOutService.setCurrentNightOutFromParams(nightOutId,roundId)){
+      if (this.nightsOutService.setCurrentNightOutFromParams(nightOutId, roundId)) {
         this.round = this.nightsOutService.currentNightOut.getRoundById(Number(roundId));
-        this.backLink = ['/nights-out',nightOutId];
+        this.backLink = ['/nights-out', nightOutId];
       }
 
     });
@@ -57,6 +58,10 @@ export class RoundsDetailComponent implements OnInit, OnDestroy {
 
   addProduct (product : ProductModel) {
     this.round.addProduct(product);
+  }
+
+  done () {
+    this.router.navigate(this.backLink);
   }
 
 }

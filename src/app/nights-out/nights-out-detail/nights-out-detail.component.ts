@@ -50,4 +50,8 @@ export class NightsOutDetailComponent implements OnInit, OnDestroy {
   viewRound (roundId : number) {
     this.router.navigate(['/nights-out', this.nightOut.id, '/rounds', roundId]);
   }
+
+  done(){
+    this.router.navigate(this.backLink);
+  }
 }
