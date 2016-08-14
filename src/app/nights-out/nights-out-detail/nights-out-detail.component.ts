@@ -1,16 +1,15 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { NavBarComponent } from '../../nav-bar';
-
 import { NightOutModel } from '../shared/models/night-out.model';
+import { NightsOutService } from '../../nights-out/nights-out.service';
 
 import { RoundsListComponent } from '../rounds/rounds-list';
-import { NightsOutService } from '../../nights-out/nights-out.service';
+import { NavBarComponent } from '../../nav-bar';
 
 @Component({
   selector: 'nights-out-detail',
-  directives: [RoundsListComponent, ROUTER_DIRECTIVES, NavBarComponent],
+  directives: [RoundsListComponent, NavBarComponent, ROUTER_DIRECTIVES],
   templateUrl: './nights-out-detail.component.html',
   styleUrls: ['./nights-out-detail.component.scss']
 })
@@ -39,8 +38,17 @@ export class NightsOutDetailComponent implements OnInit, OnDestroy {
     this.paramsSub.unsubscribe();
   }
 
-  showPreviousRounds () {
+  hasRounds () {
     return this.nightOut.rounds.length > 0;
+  }
+
+  createRoundLabel () {
+    if (this.hasRounds()) {
+      return "Add Another Round";
+    }
+    else {
+      return "Start a Round";
+    }
   }
 
   createRound () {
@@ -51,7 +59,7 @@ export class NightsOutDetailComponent implements OnInit, OnDestroy {
     this.router.navigate(['/nights-out', this.nightOut.id, '/rounds', roundId]);
   }
 
-  done(){
+  done () {
     this.router.navigate(this.backLink);
   }
 }
