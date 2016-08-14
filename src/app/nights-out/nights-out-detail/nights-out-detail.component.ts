@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { NightOutModel } from '../shared/models/night-out.model';
+import { NightOutModel } from '../../shared/models/night-out.model';
 import { NightsOutService } from '../../nights-out/nights-out.service';
 
-import { RoundsListComponent } from '../rounds/rounds-list';
+import { RoundsListComponent } from '../../rounds/rounds-list';
 import { NavBarComponent } from '../../nav-bar';
 
 @Component({

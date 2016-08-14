@@ -1,8 +1,8 @@
 import { provideRouter, RouterConfig } from '@angular/router';
 import { NightsOutOverviewComponent } from './nights-out/nights-out-overview';
 import { NightsOutDetailComponent } from './nights-out/nights-out-detail';
-import { RoundsCreateComponent } from './nights-out/rounds/rounds-create';
-import { RoundsDetailComponent } from './nights-out/rounds/rounds-detail';
+import { RoundsCreateComponent } from './rounds/rounds-create';
+import { RoundsDetailComponent } from './rounds/rounds-detail';
 
 export const routes : RouterConfig = [
   {path: '', component: NightsOutOverviewComponent},

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DatePipe, DecimalPipe } from '@angular/common';
-import { NightOutModel } from '../shared/models/night-out.model';
+import { NightOutModel } from '../../shared/models/night-out.model';
 
 @Component({
   selector: 'nights-out-card',

@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { NavBarComponent } from '../../../nav-bar';
+import { NavBarComponent } from '../../nav-bar';
 
 import { BarModel } from '../../shared/models/bar.model';
 import { BarsNearByComponent } from './bars/bars-near-by';
 
-import { NightsOutService } from '../../../nights-out/nights-out.service';
+import { NightsOutService } from '../../nights-out/nights-out.service';
 
 @Component({
   selector: 'rounds-create',

@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
-import { NightOutModel } from '../shared/models/night-out.model';
+import { NightOutModel } from '../../shared/models/night-out.model';
 import { NightsOutCardComponent } from '../nights-out-card'
 
 @Component({
