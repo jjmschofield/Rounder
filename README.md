@@ -1,4 +1,4 @@
-#Rounder
+# Rounder
 
 This project is based on the brief found in BRIEF.md.
 
@@ -9,13 +9,13 @@ An attempt has been made to build a fully operational SPA, however there is no d
 
 The original source of the application can be found at https://github.com/jjmschofield/Rounder
 
-##Demo
+## Demo
 A build of the product is available at: https://jjmschofield.github.io/Rounder/
 
 **The product's primary use case appears to be on small screen sizes. An attempt has been make it fully responsive however.
 It's recommended to view the application with mobile emulation enabled in your browser dev tools (iPhone 6s works well).**
 
-##Tech Stack and Approach
+## Tech Stack and Approach
 This project was treated as an opportunity to develop skills with up to the minute and emergent technologies. It is not (at this time) intended to be
 developed further into a production quality application.
 
@@ -53,7 +53,7 @@ Some concepts were developed during development which were considered out of sco
   * Order at table
   * NFC to purchase and kitchen/bar order
 
-##API Requirements
+## API Requirements
 The data schema was extended to include a "NightOut" entity to neatly group rounds for quick data summary by the user.
 This could be solved by grouping rounds by days, however it is worth considering that a users spend on a night out is highly likely to fall over
 two calendar days.
@@ -90,7 +90,7 @@ A rough set of endpoints is provided below, though the teams should meet to disc
 
 ```GET:/bars/{barId}/products //Gets products which a bar offers```
 
-###Additional Data Worth Considering
+### Additional Data Worth Considering
 * Product Categorization/Tagging (eg Drink/Food/Wine/Beer/Spirit)
 * Bar Distance to User
 * Bar Address
